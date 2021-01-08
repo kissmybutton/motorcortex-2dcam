@@ -69,13 +69,34 @@ export default class Adaptor {
     }
 
     /**
-     * @param {number} x - target x
-     * @param {number} y - target y 
-     * @param {number} zoom - target zoom
-     * @param {obmect} idlePosition - the idle position of the element on its parent
-     * @param {number} viewportCenter - the viewport center point 
+     * @param {object} params - {start{x,y,zoom}, target{x,y.zoom}}
      */
-    calcTransform(initialTransofrm, x, y, zoom){
+    createProgressFunction(params){
+        const start = this._xyzoomToTranslate(params.start);
+        const target = this._xyzoomToTranslate(params.target);
 
+        const lineLength = Math.sqrt(Math.pow(target.y - start.y, 2) + Math.pow(target.x - start.x, 2));
+
+        return function progress(fraction){
+            const distanceOnLine = fraction * lineLength;
+
+        }
+    }
+
+    _xyzoomToTranslate(vals){
+        // the target point from the top-left corner of the element, having applied the target zoom
+        const targetCenter = {
+            x: vals.zoom * vals.x,
+            y: vals.zoom * vals.y
+        };
+        const move = {
+            x: this.viewportCenter.x - vals.x,
+            y: this.viewportCenter.y - vals.y
+        }
+        return {
+            x: move.x - this.idlePosition.x,
+            y: move.y - this.idlePosition.y,
+            scale: vals.zoom
+        }
     }
 }

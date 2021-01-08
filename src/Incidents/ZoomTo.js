@@ -35,10 +35,7 @@ export default class MyEffect extends MotorCortex.Effect{
     }
     
     /**
-    * The moment the Effect gets applied as MonoIncident to the specific
-    * element and for the specific animatedAttr.
-    * You can use this method to initialise anything you need to initialise
-    * in order to use it on the onProgress method
+     * 
     **/
     onGetContext(){
         this.progressMethod = this.adaptor.createProgressFunction({
