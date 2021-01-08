@@ -1,6 +1,5 @@
 import MotorCortex from '@kissmybutton/motorcortex';
-import AdaptorClass from '../utils/Adaptor';
-const Adaptor = new AdaptorClass();
+import Adaptor from '../utils/Adaptor';
 
 /**
  * Thus, here you'll find:
@@ -16,6 +15,13 @@ const Adaptor = new AdaptorClass();
  *
  **/
 export default class MyEffect extends MotorCortex.Effect{
+    get adaptor(){
+        if(!this._adaptor){
+            this._adaptor = new Adaptor(this.element);
+        }
+        return this._adaptor;
+    }
+
     /**
     * the scratch value of the Incident should return back the triplette 
     * x, y, zoom
@@ -25,7 +31,7 @@ export default class MyEffect extends MotorCortex.Effect{
     * scaleX value of our element
     **/
     getScratchValue(){
-        return Adaptor.calcXYZoom(this.element);
+        return this.adaptor.calcXYZoom();
     }
     
     /**
@@ -35,24 +41,10 @@ export default class MyEffect extends MotorCortex.Effect{
     * in order to use it on the onProgress method
     **/
     onGetContext(){
-        this.element.style.transformOrigin = "top left";
-
-        const idlePosition = Adaptor.getIdlePosition(this.element);
-        const viewportCenter = Adaptor.getViewPortCenter(this.element);
-
-        // we calculate the initial and the target translateX and translateY and
-        // of course the initial and target scale
-        const target = this.targetValue;
-        const start = this.initialValue;
-        // the target point from the top-left corner of the object, having applied the target zoom
-        const targetCenter = {
-            x: this.attrs.zoom * this.attrs.center.x,
-            y: this.attrs.zoom * this.attrs.center.y
-        };
-        const move = {
-            x: viewport.width/2 - targetCenter.x,
-            y: viewport.height/2 - targetCenter.y
-        }
+        this.progressMethod = this.adaptor.createProgressFunction({
+            start: this.initialValue,
+            target: this.targetValue
+        });
     }
 
     /**

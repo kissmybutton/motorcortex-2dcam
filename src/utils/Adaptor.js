@@ -1,11 +1,19 @@
 import getMatrix2D from './matrix2d';
 
 export default class Adaptor {
-    getMatrix(el){
+    constructor(el){
+        this.el = el;
+        this.matrix = this._getMatrix(el);
+        this.viewportCenter = this._getViewPortCenter();
+        this.idlePosition = this._getIdlePosition();
+    }
+
+    _getMatrix(el){
         return getMatrix2D(el);
     }
 
-    getViewPortCenter(el){
+    _getViewPortCenter(){
+        const el = this.el;
         const parentNode = el.parentNode;
         const viewportDims = {
             width: parseFloat(getComputedStyle(parentNode, null).width.replace("px", "")),
@@ -20,11 +28,11 @@ export default class Adaptor {
 
     /**
      * Returns the position of the element on its parent on its initial state, 
-     * without any style manipulation by us. We consider this position as the
+     * with translateX and translateY = 0. We consider this position as the
      * idle position of the element on its parent.
-     * @param {HTMLElement} el 
      */
-    getIdlePosition(el){
+    _getIdlePosition(){
+        const el = this.el;
         // bounding rect: {top, right, bottom, left}
         const elBoundingRect = el.getBoundingClientRect();
         const parentBoundingRect = el.parentNode.getBoundingClientRect();
@@ -41,14 +49,11 @@ export default class Adaptor {
      * @param {HTMLElement} el 
      * @returns {object} x, y, zoom, initialTransofrm{x,y}
      */
-    calcXYZoom(el){
-        const matrix = this.getMatrix(el);
-
-        // the absolute position of our element on its parent
-        const position = this.getIdlePosition(el);
-
-        // the current X,Y of our element, having zoom=1, scale=1
-        const viewportCenter = this.getViewPortCenter(el);
+    calcXYZoom(){
+        const matrix = this.matrix;
+        const position = this.idlePosition;
+        const viewportCenter = this.viewportCenter;
+        
         const currentOneToOneCenter = {
             x: viewportCenter.x - position.x,
             y: viewportCenter.y - position.y
@@ -60,19 +65,15 @@ export default class Adaptor {
             y: currentOneToOneCenter.y / matrix.scaleY
         }
 
-        return {
-            x: currentCenter.x,
-            y: currentCenter.y,
-            zoom: matrix.scaleX
-        }
+        return {...currentCenter, zoom: matrix.scaleX};
     }
 
     /**
-     * 
-     * @param {object} initialTransofrm - the initial transform as calculated on this.calcXYZoom
      * @param {number} x - target x
      * @param {number} y - target y 
-     * @param {number} zoom - target zoom 
+     * @param {number} zoom - target zoom
+     * @param {obmect} idlePosition - the idle position of the element on its parent
+     * @param {number} viewportCenter - the viewport center point 
      */
     calcTransform(initialTransofrm, x, y, zoom){
 
