@@ -112,4 +112,43 @@ export default class Adaptor {
             scale: vals.zoom
         }
     }
+    
+    /**
+     * 
+     * @param {object} data - {
+            path,
+            startPoint,
+            finalPoint,
+            pathLength,
+            zoom,
+            startFrom,
+            endTo,
+            transitionDuration,
+            alongPathDuration
+        }
+     */
+    createPathProgressFunction(data, initialValue){
+        let transitionProgress = (progress)=>{};
+        if(data.transitionDuration > 0){
+            transitionProgress = this.createProgressFunction(
+                initialValue, 
+                {
+                    x: data.startPoint.x,
+                    y: data.startPoint.y,
+                    zoom: initialValue.zoom
+                }
+            );
+        }
+
+        const transitionFraction = data.transitionDuration/(data.transitionDuration + data.alongPathDuration);
+        const alongPathFraction = (data.alongPathDuration/(data.transitionDuration + data.alongPathDuration));
+        return function(progress){
+            if(data.transitionDuration > 0 && transitionFraction < progress){
+                return transitionProgress(progress / transitionFraction);
+            }
+            const inPathProgress = (progress - transitionFraction) / alongPathFraction;
+            const point = data.path.getPointAtLength(inPathProgress); // x, y -> that's where we want to be
+            return this._xyzoomToTranslate({...point, zoom: data.zoom});
+        }
+    }
 }
