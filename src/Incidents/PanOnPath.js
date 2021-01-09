@@ -55,8 +55,8 @@ export default class FocusAlongPath extends ZoomTo{
             transitionDuration: !this.attrs.transition ? 0 : this.attrs.transition,
             get alongPathDuration() { return duration - this.transitionDuration; }
         };
-        this.data.finalPoint = path.getPointAtLength(this.data.endTo);
-        this.data.startPoint = path.getPointAtLength(this.data.startFrom);
+        this.data.finalPoint = path.getPointAtLength(this.data.endTo*this.data.pathLength);
+        this.data.startPoint = path.getPointAtLength(this.data.startFrom*this.data.pathLength);
 
         // then set the final values of the Incident in terms of x, y, zoom so the 
         // following Incidents can use it
