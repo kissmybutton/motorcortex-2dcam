@@ -32,66 +32,107 @@ const clip = new MotorCortex.HTMLClip({
     }
 });
 
+// const zoomTo1 = new MyPlugin.ZoomTo({
+//     dims: {
+//         width: 1920,
+//         height: 1080
+//     },
+//     viewport: {
+//         width: 640,
+//         height: 360
+//     },
+//     center: {
+//         x: 700,
+//         y: 342
+//     },
+//     zoom: 0.7,
+//     duration: 2000,
+//     easing: 'easeOutSine'
+// }, {
+//     selector: '.img'
+// });
+
+// const zoomTo2 = new MyPlugin.ZoomTo({
+//     dims: {
+//         width: 1920,
+//         height: 1080
+//     },
+//     viewport: {
+//         width: 640,
+//         height: 360
+//     },
+//     center: {
+//         x: 1280,
+//         y: 150
+//     },
+//     zoom: 1.2,
+//     duration: 4000,
+//     easing: 'easeInOutSine'
+// }, {
+//     selector: '.img'
+// });
+
+// const zoomTo3 = new MyPlugin.ZoomTo({
+//     dims: {
+//         width: 1920,
+//         height: 1080
+//     },
+//     viewport: {
+//         width: 640,
+//         height: 360
+//     },
+//     center: {
+//         x: 1375,
+//         y: 460
+//     },
+//     zoom: 1,
+//     duration: 3000,
+//     easing: 'easeInOutSine'
+// }, {
+//     selector: '.img'
+// });
+
 const zoomTo1 = new MyPlugin.ZoomTo({
-    dims: {
-        width: 1920,
-        height: 1080
-    },
-    viewport: {
-        width: 640,
-        height: 360
-    },
-    center: {
-        x: 700,
-        y: 342
-    },
-    zoom: 0.7,
+    animatedAttrs: {
+        position: {
+            x: 700,
+            y: 342,
+            zoom: 0.7
+        }
+    }
+}, {
+    selector: '.img',
     duration: 2000,
     easing: 'easeOutSine'
-}, {
-    selector: '.img'
 });
 
 const zoomTo2 = new MyPlugin.ZoomTo({
-    dims: {
-        width: 1920,
-        height: 1080
-    },
-    viewport: {
-        width: 640,
-        height: 360
-    },
-    center: {
-        x: 1280,
-        y: 150
-    },
-    zoom: 1.2,
+    animatedAttrs: {
+        position: {
+            x: 1280,
+            y: 150,
+            zoom: 1.2
+        }
+    }
+}, {
+    selector: '.img',
     duration: 4000,
     easing: 'easeInOutSine'
-}, {
-    selector: '.img'
 });
 
 const zoomTo3 = new MyPlugin.ZoomTo({
-    dims: {
-        width: 1920,
-        height: 1080
-    },
-    viewport: {
-        width: 640,
-        height: 360
-    },
-    center: {
-        x: 1375,
-        y: 460
-    },
-    zoom: 1,
+    animatedAttrs: {
+        position: {
+            x: 1375,
+            y: 460,
+            zoom: 1
+        }
+    }
+}, {
+    selector: '.img',
     duration: 3000,
     easing: 'easeInOutSine'
-}, {
-    selector: '.img'
 });
-
 
 
 clip.addIncident(zoomTo1, 0);

@@ -55,63 +55,102 @@ var clip = new (_kissmybutton_motorcortex__WEBPACK_IMPORTED_MODULE_0___default()
     width: '640px',
     height: '360px'
   }
-});
+}); // const zoomTo1 = new MyPlugin.ZoomTo({
+//     dims: {
+//         width: 1920,
+//         height: 1080
+//     },
+//     viewport: {
+//         width: 640,
+//         height: 360
+//     },
+//     center: {
+//         x: 700,
+//         y: 342
+//     },
+//     zoom: 0.7,
+//     duration: 2000,
+//     easing: 'easeOutSine'
+// }, {
+//     selector: '.img'
+// });
+// const zoomTo2 = new MyPlugin.ZoomTo({
+//     dims: {
+//         width: 1920,
+//         height: 1080
+//     },
+//     viewport: {
+//         width: 640,
+//         height: 360
+//     },
+//     center: {
+//         x: 1280,
+//         y: 150
+//     },
+//     zoom: 1.2,
+//     duration: 4000,
+//     easing: 'easeInOutSine'
+// }, {
+//     selector: '.img'
+// });
+// const zoomTo3 = new MyPlugin.ZoomTo({
+//     dims: {
+//         width: 1920,
+//         height: 1080
+//     },
+//     viewport: {
+//         width: 640,
+//         height: 360
+//     },
+//     center: {
+//         x: 1375,
+//         y: 460
+//     },
+//     zoom: 1,
+//     duration: 3000,
+//     easing: 'easeInOutSine'
+// }, {
+//     selector: '.img'
+// });
+
 var zoomTo1 = new MyPlugin.ZoomTo({
-  dims: {
-    width: 1920,
-    height: 1080
-  },
-  viewport: {
-    width: 640,
-    height: 360
-  },
-  center: {
-    x: 700,
-    y: 342
-  },
-  zoom: 0.7,
+  animatedAttrs: {
+    position: {
+      x: 700,
+      y: 342,
+      zoom: 0.7
+    }
+  }
+}, {
+  selector: '.img',
   duration: 2000,
   easing: 'easeOutSine'
-}, {
-  selector: '.img'
 });
 var zoomTo2 = new MyPlugin.ZoomTo({
-  dims: {
-    width: 1920,
-    height: 1080
-  },
-  viewport: {
-    width: 640,
-    height: 360
-  },
-  center: {
-    x: 1280,
-    y: 150
-  },
-  zoom: 1.2,
+  animatedAttrs: {
+    position: {
+      x: 1280,
+      y: 150,
+      zoom: 1.2
+    }
+  }
+}, {
+  selector: '.img',
   duration: 4000,
   easing: 'easeInOutSine'
-}, {
-  selector: '.img'
 });
 var zoomTo3 = new MyPlugin.ZoomTo({
-  dims: {
-    width: 1920,
-    height: 1080
-  },
-  viewport: {
-    width: 640,
-    height: 360
-  },
-  center: {
-    x: 1375,
-    y: 460
-  },
-  zoom: 1,
+  animatedAttrs: {
+    position: {
+      x: 1375,
+      y: 460,
+      zoom: 1
+    }
+  }
+}, {
+  selector: '.img',
   duration: 3000,
   easing: 'easeInOutSine'
-}, {
-  selector: '.img'
 });
 clip.addIncident(zoomTo1, 0);
 clip.addIncident(zoomTo2, 2000);
@@ -126,57 +165,95 @@ var player = new (_kissmybutton_motorcortex_player__WEBPACK_IMPORTED_MODULE_2___
 /***/ 34:
 /***/ (function(module, exports, __webpack_require__) {
 
-/* provided dependency */ var Promise = __webpack_require__(641);
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-!function (t, n) {
-  "object" == ( false ? 0 : _typeof(exports)) && "undefined" != "object" ? module.exports = n(__webpack_require__(444)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(444)], __WEBPACK_AMD_DEFINE_FACTORY__ = (n),
+!function (t, e) {
+  "object" == ( false ? 0 : _typeof(exports)) && "undefined" != "object" ? module.exports = e(__webpack_require__(444)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(444)], __WEBPACK_AMD_DEFINE_FACTORY__ = (e),
 		__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 		(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
 		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : 0;
 }(this, function (t) {
   "use strict";
 
-  function n(t) {
+  function e(t) {
     return t && "object" == _typeof(t) && "default" in t ? t : {
       default: t
     };
   }
 
-  var e = n(t);
+  var r = e(t);
 
-  function o(t, n) {
-    if (!(t instanceof n)) throw new TypeError("Cannot call a class as a function");
+  function n(t, e) {
+    if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
   }
 
-  function r(t, n) {
-    for (var e = 0; e < n.length; e++) {
-      var o = n[e];
-      o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(t, o.key, o);
+  function o(t, e) {
+    for (var r = 0; r < e.length; r++) {
+      var n = e[r];
+      n.enumerable = n.enumerable || !1, n.configurable = !0, "value" in n && (n.writable = !0), Object.defineProperty(t, n.key, n);
     }
   }
 
-  function i(t) {
-    return (i = Object.setPrototypeOf ? Object.getPrototypeOf : function (t) {
+  function a(t, e, r) {
+    return e && o(t.prototype, e), r && o(t, r), t;
+  }
+
+  function i(t, e, r) {
+    return e in t ? Object.defineProperty(t, e, {
+      value: r,
+      enumerable: !0,
+      configurable: !0,
+      writable: !0
+    }) : t[e] = r, t;
+  }
+
+  function c(t, e) {
+    var r = Object.keys(t);
+
+    if (Object.getOwnPropertySymbols) {
+      var n = Object.getOwnPropertySymbols(t);
+      e && (n = n.filter(function (e) {
+        return Object.getOwnPropertyDescriptor(t, e).enumerable;
+      })), r.push.apply(r, n);
+    }
+
+    return r;
+  }
+
+  function s(t) {
+    for (var e = 1; e < arguments.length; e++) {
+      var r = null != arguments[e] ? arguments[e] : {};
+      e % 2 ? c(Object(r), !0).forEach(function (e) {
+        i(t, e, r[e]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(r)) : c(Object(r)).forEach(function (e) {
+        Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(r, e));
+      });
+    }
+
+    return t;
+  }
+
+  function u(t) {
+    return (u = Object.setPrototypeOf ? Object.getPrototypeOf : function (t) {
       return t.__proto__ || Object.getPrototypeOf(t);
     })(t);
   }
 
-  function a(t, n) {
-    return (a = Object.setPrototypeOf || function (t, n) {
-      return t.__proto__ = n, t;
-    })(t, n);
+  function l(t, e) {
+    return (l = Object.setPrototypeOf || function (t, e) {
+      return t.__proto__ = e, t;
+    })(t, e);
   }
 
-  function s(t, n) {
-    return !n || "object" != _typeof(n) && "function" != typeof n ? function (t) {
+  function f(t, e) {
+    return !e || "object" != _typeof(e) && "function" != typeof e ? function (t) {
       if (void 0 === t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
       return t;
-    }(t) : n;
+    }(t) : e;
   }
 
-  function u(t) {
-    var n = function () {
+  function p(t) {
+    var e = function () {
       if ("undefined" == typeof Reflect || !Reflect.construct) return !1;
       if (Reflect.construct.sham) return !1;
       if ("function" == typeof Proxy) return !0;
@@ -189,2960 +266,169 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     }();
 
     return function () {
-      var e,
-          o = i(t);
+      var r,
+          n = u(t);
 
-      if (n) {
-        var r = i(this).constructor;
-        e = Reflect.construct(o, arguments, r);
-      } else e = o.apply(this, arguments);
+      if (e) {
+        var o = u(this).constructor;
+        r = Reflect.construct(n, arguments, o);
+      } else r = n.apply(this, arguments);
 
-      return s(this, e);
+      return f(this, r);
     };
   }
 
-  function p(t, n) {
-    if (!(t instanceof n)) throw new TypeError("Cannot call a class as a function");
-  }
-
-  function l(t, n) {
-    for (var e = 0; e < n.length; e++) {
-      var o = n[e];
-      o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(t, o.key, o);
-    }
-  }
-
-  function c(t, n, e) {
-    return n && l(t.prototype, n), e && l(t, e), t;
-  }
-
-  function f(t, n, e) {
-    return n in t ? Object.defineProperty(t, n, {
-      value: e,
-      enumerable: !0,
-      configurable: !0,
-      writable: !0
-    }) : t[n] = e, t;
-  }
-
-  function y(t, n) {
-    var e = Object.keys(t);
-
-    if (Object.getOwnPropertySymbols) {
-      var o = Object.getOwnPropertySymbols(t);
-      n && (o = o.filter(function (n) {
-        return Object.getOwnPropertyDescriptor(t, n).enumerable;
-      })), e.push.apply(e, o);
+  var h = function () {
+    function t(e) {
+      n(this, t), this.el = e, this.matrix = this._getMatrix(e), this.viewportCenter = this._getViewPortCenter(), this.idlePosition = this._getIdlePosition();
     }
 
-    return e;
-  }
-
-  function d(t, n) {
-    if ("function" != typeof n && null !== n) throw new TypeError("Super expression must either be null or a function");
-    t.prototype = Object.create(n && n.prototype, {
-      constructor: {
-        value: t,
-        writable: !0,
-        configurable: !0
-      }
-    }), n && h(t, n);
-  }
-
-  function g(t) {
-    return (g = Object.setPrototypeOf ? Object.getPrototypeOf : function (t) {
-      return t.__proto__ || Object.getPrototypeOf(t);
-    })(t);
-  }
-
-  function h(t, n) {
-    return (h = Object.setPrototypeOf || function (t, n) {
-      return t.__proto__ = n, t;
-    })(t, n);
-  }
-
-  function m() {
-    if ("undefined" == typeof Reflect || !Reflect.construct) return !1;
-    if (Reflect.construct.sham) return !1;
-    if ("function" == typeof Proxy) return !0;
-
-    try {
-      return Date.prototype.toString.call(Reflect.construct(Date, [], function () {})), !0;
-    } catch (t) {
-      return !1;
-    }
-  }
-
-  function b(t, n) {
-    return !n || "object" != _typeof(n) && "function" != typeof n ? function (t) {
-      if (void 0 === t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-      return t;
-    }(t) : n;
-  }
-
-  function v(t) {
-    return function () {
-      var n,
-          e = g(t);
-
-      if (m()) {
-        var o = g(this).constructor;
-        n = Reflect.construct(e, arguments, o);
-      } else n = e.apply(this, arguments);
-
-      return b(this, n);
-    };
-  }
-
-  var w = {},
-      x = {
-    duration: 1e3,
-    round: 0
-  },
-      P = ["translateX", "translateY", "translateZ", "rotate", "rotateX", "rotateY", "rotateZ", "scale", "scaleX", "scaleY", "scaleZ", "skew", "skewX", "skewY", "perspective"],
-      O = {
-    CSS: {}
-  };
-
-  function k(t, n, e) {
-    return Math.min(Math.max(t, n), e);
-  }
-
-  function S(t, n) {
-    return t.indexOf(n) > -1;
-  }
-
-  var j = {
-    arr: function arr(t) {
-      return Array.isArray(t);
-    },
-    obj: function obj(t) {
-      return S(Object.prototype.toString.call(t), "Object");
-    },
-    pth: function pth(t) {
-      return j.obj(t) && t.hasOwnProperty("totalLength");
-    },
-    svg: function svg(t) {
-      return t instanceof SVGElement;
-    },
-    inp: function inp(t) {
-      return t instanceof HTMLInputElement;
-    },
-    dom: function dom(t) {
-      return t.nodeType || j.svg(t);
-    },
-    str: function str(t) {
-      return "string" == typeof t;
-    },
-    fnc: function fnc(t) {
-      return "function" == typeof t;
-    },
-    und: function und(t) {
-      return void 0 === t;
-    },
-    hex: function hex(t) {
-      return /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(t);
-    },
-    rgb: function rgb(t) {
-      return /^rgb/.test(t);
-    },
-    hsl: function hsl(t) {
-      return /^hsl/.test(t);
-    },
-    col: function col(t) {
-      return j.hex(t) || j.rgb(t) || j.hsl(t);
-    },
-    key: function key(t) {
-      return !w.hasOwnProperty(t) && !x.hasOwnProperty(t) && "targets" !== t && "keyframes" !== t;
-    }
-  },
-      R = {
-    linear: function linear() {
-      return function (t) {
-        return t;
-      };
-    }
-  };
-
-  function C(t, n) {
-    for (var e = t.length, o = arguments.length >= 2 ? arguments[1] : void 0, r = [], i = 0; i < e; i++) {
-      if (i in t) {
-        var a = t[i];
-        n.call(o, a, i, t) && r.push(a);
-      }
-    }
-
-    return r;
-  }
-
-  function M(t) {
-    return t.reduce(function (t, n) {
-      return t.concat(j.arr(n) ? M(n) : n);
-    }, []);
-  }
-
-  function I(t) {
-    return j.arr(t) ? t : (j.str(t) && (t = function (t) {
-      try {
-        return document.querySelectorAll(t);
-      } catch (t) {
-        return;
-      }
-    }(t) || t), t instanceof NodeList || t instanceof HTMLCollection ? [].slice.call(t) : [t]);
-  }
-
-  function T(t, n) {
-    return t.some(function (t) {
-      return t === n;
-    });
-  }
-
-  function E(t) {
-    var n = {};
-
-    for (var e in t) {
-      n[e] = t[e];
-    }
-
-    return n;
-  }
-
-  function B(t, n) {
-    var e = E(t);
-
-    for (var o in t) {
-      e[o] = n.hasOwnProperty(o) ? n[o] : t[o];
-    }
-
-    return e;
-  }
-
-  function L(t, n) {
-    var e = E(t);
-
-    for (var o in n) {
-      e[o] = j.und(t[o]) ? n[o] : t[o];
-    }
-
-    return e;
-  }
-
-  function A(t) {
-    return j.rgb(t) ? (e = /rgb\((\d+,\s*[\d]+,\s*[\d]+)\)/g.exec(n = t)) ? "rgba(" + e[1] + ",1)" : n : j.hex(t) ? function (t) {
-      var n = t.replace(/^#?([a-f\d])([a-f\d])([a-f\d])$/i, function (t, n, e, o) {
-        return n + n + e + e + o + o;
-      }),
-          e = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(n);
-      return "rgba(" + parseInt(e[1], 16) + "," + parseInt(e[2], 16) + "," + parseInt(e[3], 16) + ",1)";
-    }(t) : j.hsl(t) ? function (t) {
-      var n,
-          e,
-          o,
-          r = /hsl\((\d+),\s*([\d.]+)%,\s*([\d.]+)%\)/g.exec(t) || /hsla\((\d+),\s*([\d.]+)%,\s*([\d.]+)%,\s*([\d.]+)\)/g.exec(t),
-          i = parseInt(r[1], 10) / 360,
-          a = parseInt(r[2], 10) / 100,
-          s = parseInt(r[3], 10) / 100,
-          u = r[4] || 1;
-
-      function p(t, n, e) {
-        return e < 0 && (e += 1), e > 1 && (e -= 1), e < 1 / 6 ? t + 6 * (n - t) * e : e < .5 ? n : e < 2 / 3 ? t + (n - t) * (2 / 3 - e) * 6 : t;
-      }
-
-      if (0 == a) n = e = o = s;else {
-        var l = s < .5 ? s * (1 + a) : s + a - s * a,
-            c = 2 * s - l;
-        n = p(c, l, i + 1 / 3), e = p(c, l, i), o = p(c, l, i - 1 / 3);
-      }
-      return "rgba(" + 255 * n + "," + 255 * e + "," + 255 * o + "," + u + ")";
-    }(t) : void 0;
-    var n, e;
-  }
-
-  function X(t) {
-    var n = /[+-]?\d*\.?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?(%|px|pt|em|rem|in|cm|mm|ex|ch|pc|vw|vh|vmin|vmax|deg|rad|turn)?$/.exec(t);
-    if (n) return n[1];
-  }
-
-  function Y(t, n) {
-    return j.fnc(t) ? t(n.target, n.id, n.total) : t;
-  }
-
-  function _(t, n) {
-    return t.getAttribute(n);
-  }
-
-  function z(t, n, e) {
-    if (T([e, "deg", "rad", "turn"], X(n))) return n;
-    var o = O.CSS[n + e];
-    if (!j.und(o)) return o;
-    var r = document.createElement(t.tagName),
-        i = t.parentNode && t.parentNode !== document ? t.parentNode : document.body;
-    i.appendChild(r), r.style.position = "absolute", r.style.width = 100 + e;
-    var a = 100 / r.offsetWidth;
-    i.removeChild(r);
-    var s = a * parseFloat(n);
-    return O.CSS[n + e] = s, s;
-  }
-
-  function V(t, n, e) {
-    if (n in t.style) {
-      var o = n.replace(/([a-z])([A-Z])/g, "$1-$2").toLowerCase(),
-          r = t.style[n] || getComputedStyle(t).getPropertyValue(o) || "0";
-      return e ? z(t, r, e) : r;
-    }
-  }
-
-  function W(t, n) {
-    return j.dom(t) && !j.inp(t) && (_(t, n) || j.svg(t) && t[n]) ? "attribute" : j.dom(t) && T(P, n) ? "transform" : j.dom(t) && "transform" !== n && V(t, n) ? "css" : null != t[n] ? "object" : void 0;
-  }
-
-  function D(t) {
-    if (j.dom(t)) {
-      for (var n, e = t.style.transform || "", o = /(\w+)\(([^)]*)\)/g, r = new Map(); n = o.exec(e);) {
-        r.set(n[1], n[2]);
-      }
-
-      return r;
-    }
-  }
-
-  function G(t, n, e, o) {
-    var r = S(n, "scale") ? 1 : 0 + function (t) {
-      return S(t, "translate") || "perspective" === t ? "px" : S(t, "rotate") || S(t, "skew") ? "deg" : void 0;
-    }(n),
-        i = D(t).get(n) || r;
-    return e && (e.transforms.list.set(n, i), e.transforms.last = n), o ? z(t, i, o) : i;
-  }
-
-  function N(t, n, e, o) {
-    switch (W(t, n)) {
-      case "transform":
-        return G(t, n, o, e);
-
-      case "css":
-        return V(t, n, e);
-
-      case "attribute":
-        return _(t, n);
-
-      default:
-        return t[n] || 0;
-    }
-  }
-
-  function Z(t, n) {
-    var e = /^(\*=|\+=|-=)/.exec(t);
-    if (!e) return t;
-    var o = X(t) || 0,
-        r = parseFloat(n),
-        i = parseFloat(t.replace(e[0], ""));
-
-    switch (e[0][0]) {
-      case "+":
-        return r + i + o;
-
-      case "-":
-        return r - i + o;
-
-      case "*":
-        return r * i + o;
-    }
-  }
-
-  function F(t, n) {
-    if (j.col(t)) return A(t);
-    if (/\s/g.test(t)) return t;
-    var e = X(t),
-        o = e ? t.substr(0, t.length - e.length) : t;
-    return n ? o + n : o;
-  }
-
-  function $(t, n) {
-    var e = /[+-]?\d*\.?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?/g,
-        o = F(j.pth(t) ? t.totalLength : t, n) + "";
-    return {
-      original: o,
-      numbers: o.match(e) ? o.match(e).map(Number) : [0],
-      strings: j.str(t) || n ? o.split(e) : []
-    };
-  }
-
-  function H(t) {
-    var n = function (t) {
-      return C(t ? M(j.arr(t) ? t.map(I) : I(t)) : [], function (t, n, e) {
-        return e.indexOf(t) === n;
-      });
-    }(t);
-
-    return n.map(function (t, e) {
-      return {
-        target: t,
-        id: e,
-        total: n.length,
-        transforms: {
-          list: D(t)
-        }
-      };
-    });
-  }
-
-  function K(t, n) {
-    var e = E(n);
-
-    if (j.arr(t)) {
-      var o = t.length;
-      2 === o && !j.obj(t[0]) ? t = {
-        value: t
-      } : j.fnc(n.duration) || (e.duration = n.duration / o);
-    }
-
-    return (j.arr(t) ? t : [t]).map(function (t, n) {
-      return j.obj(t) && !j.pth(t) ? t : {
-        value: t
-      };
-    }).map(function (t) {
-      return L(t, e);
-    });
-  }
-
-  function q(t, n) {
-    var e;
-    return t.tweens.map(function (o) {
-      var r = function (t, n) {
-        var e = {};
-
-        for (var o in t) {
-          var r = Y(t[o], n);
-          j.arr(r) && 1 === (r = r.map(function (t) {
-            return Y(t, n);
-          })).length && (r = r[0]), e[o] = r;
-        }
-
-        return e.duration = parseFloat(e.duration), e;
-      }(o, n),
-          i = r.value,
-          a = j.arr(i) ? i[1] : i,
-          s = X(a),
-          u = N(n.target, t.name, s, n),
-          p = e ? e.to.original : u,
-          l = j.arr(i) ? i[0] : p,
-          c = X(l) || X(u),
-          f = s || c;
-
-      return j.und(a) && (a = p), r.from = $(l, f), r.to = $(Z(a, l), f), r.start = e ? e.end : 0, r.end = r.start + r.duration, r.isPath = !1, r.isColor = j.col(r.from.original), r.isColor && (r.round = 1), e = r, r;
-    });
-  }
-
-  var U = {
-    css: function css(t, n, e) {
-      return t.style[n] = e;
-    },
-    attribute: function attribute(t, n, e) {
-      return t.setAttribute(n, e);
-    },
-    object: function object(t, n, e) {
-      return t[n] = e;
-    },
-    transform: function transform(t, n, e, o, r) {
-      if (o.list.set(n, e), n === o.last || r) {
-        var i = "";
-        o.list.forEach(function (t, n) {
-          i += n + "(" + t + ") ";
-        }), t.style.transform = i;
-      }
-    }
-  };
-
-  function J(t, n) {
-    H(t).forEach(function (t) {
-      for (var e in n) {
-        var o = Y(n[e], t),
-            r = t.target,
-            i = X(o),
-            a = N(r, e, i, t),
-            s = Z(F(o, i || X(a)), a),
-            u = W(r, e);
-        U[u](r, e, s, t.transforms, !0);
-      }
-    });
-  }
-
-  function Q(t, n) {
-    return C(M(t.map(function (t) {
-      return n.map(function (n) {
-        return function (t, n) {
-          var e = W(t.target, n.name);
-
-          if (e) {
-            var o = q(n, t),
-                r = o[o.length - 1];
-            return {
-              type: e,
-              property: n.name,
-              animatable: t,
-              tweens: o,
-              duration: r.end
-            };
-          }
-        }(t, n);
-      });
-    })), function (t) {
-      return !j.und(t);
-    });
-  }
-
-  var tt = 0;
-
-  function nt(t) {
-    var n = B(w, t),
-        e = B(x, t),
-        o = function (t, n) {
-      var e = [];
-
-      for (var o in n) {
-        j.key(o) && e.push({
-          name: o,
-          tweens: K(n[o], t)
-        });
-      }
-
-      return e;
-    }(e, t),
-        r = H(t.targets),
-        i = Q(r, o),
-        a = function (t, n) {
-      var e = t.length,
-          o = {};
-      return o.duration = e ? Math.max.apply(Math, t.map(function (t) {
-        return t.duration;
-      })) : n.duration, o;
-    }(i, e),
-        s = tt;
-
-    return tt++, L(n, {
-      id: s,
-      children: [],
-      animatables: r,
-      animations: i,
-      duration: a.duration
-    });
-  }
-
-  function et(t) {
-    void 0 === t && (t = {});
-    var n,
-        e = 0,
-        o = null;
-
-    function r(t) {
-      var n = window.Promise && new Promise(function (t) {
-        return o = t;
-      });
-      return t.finished = n, n;
-    }
-
-    var i = nt(t);
-    r(i);
-
-    function a(t, n) {
-      n && n.seek(t);
-    }
-
-    function s(t) {
-      var s = i.duration,
-          u = t;
-      i.progress = k(u / s * 100, 0, 100), i.reversePlayback = u < i.currentTime, n && function (t) {
-        if (i.reversePlayback) for (var o = e; o--;) {
-          a(t, n[o]);
-        } else for (var r = 0; r < e; r++) {
-          a(t, n[r]);
-        }
-      }(u), !i.began && i.currentTime > 0 && (i.began = !0), function (t) {
-        for (var n = 0, e = i.animations, o = e.length; n < o;) {
-          var r = e[n],
-              a = r.animatable,
-              s = r.tweens,
-              u = s.length - 1,
-              p = s[u];
-          u && (p = C(s, function (n) {
-            return t < n.end;
-          })[0] || p);
-
-          for (var l = k(t - p.start, 0, p.duration) / p.duration, c = p.to.strings, f = p.round, y = [], d = p.to.numbers.length, g = void 0, h = 0; h < d; h++) {
-            var m = void 0,
-                b = p.to.numbers[h],
-                v = p.from.numbers[h] || 0;
-            m = v + l * (b - v), f && (p.isColor && h > 2 || (m = Math.round(m * f) / f)), y.push(m);
-          }
-
-          var w = c.length;
-
-          if (w) {
-            g = c[0];
-
-            for (var x = 0; x < w; x++) {
-              c[x];
-              var P = c[x + 1],
-                  O = y[x];
-              isNaN(O) || (g += P ? O + P : O + " ");
-            }
-          } else g = y[0];
-
-          U[r.type](a.target, r.property, g, a.transforms), r.currentValue = g, n++;
-        }
-      }(u), i.currentTime = k(u, 0, s), t >= s && (i.paused = !0, i.completed || (i.completed = !0, !i.passThrough && "Promise" in window && (o(), r(i))));
-    }
-
-    return i.reset = function () {
-      i.passThrough = !1, i.currentTime = 0, i.progress = 0, i.paused = !0, i.began = !1, i.completed = !1, i.reversePlayback = !1, n = i.children;
-
-      for (var t = e = n.length; t--;) {
-        i.children[t].reset();
-      }
-    }, i.set = function (t, n) {
-      return J(t, n), i;
-    }, i.seek = function (t) {
-      s(t);
-    }, i.reset(), i;
-  }
-
-  function ot(t, n) {
-    return Math.sqrt(Math.pow(n.x - t.x, 2) + Math.pow(n.y - t.y, 2));
-  }
-
-  function rt(t) {
-    for (var n, e = t.points, o = 0, r = 0; r < e.numberOfItems; r++) {
-      var i = e.getItem(r);
-      r > 0 && (o += ot(n, i)), n = i;
-    }
-
-    return o;
-  }
-
-  function it(t) {
-    if (t.getTotalLength) return t.getTotalLength();
-
-    switch (t.tagName.toLowerCase()) {
-      case "circle":
+    return a(t, [{
+      key: "_getMatrix",
+      value: function value(t) {
         return function (t) {
-          return 2 * Math.PI * _(t, "r");
+          var e = window.getComputedStyle(t).transform;
+          if ("" === e || "none" === e) return {};
+          var r,
+              n,
+              o,
+              a,
+              i,
+              c,
+              s,
+              u,
+              l = e.split("(")[1].split(")")[0].split(",");
+          return r = l, n = Math.atan2(r[1], r[0]), o = Math.pow(r[0], 2) + Math.pow(r[1], 2), a = Math.pow(r[2], 2) + Math.pow(r[3], 2), i = Math.sqrt(o), c = (r[0] * r[3] - r[2] * r[1]) / i, s = Math.atan2(r[0] * r[2] + r[1] * r[3], o), u = Math.atan2(r[1] * r[3] + r[0] * r[2], a), {
+            rotate: n / (Math.PI / 180) + "deg",
+            scaleX: i,
+            scaleY: c,
+            skewX: (1 === o ? s / (Math.PI / 180) : 0) + "deg",
+            skewY: (1 === a ? u / (Math.PI / 180) : 0) + "deg",
+            translateX: r[4] + "px",
+            translateY: r[5] + "px"
+          };
         }(t);
-
-      case "rect":
-        return function (t) {
-          return 2 * _(t, "width") + 2 * _(t, "height");
-        }(t);
-
-      case "line":
-        return function (t) {
-          return ot({
-            x: _(t, "x1"),
-            y: _(t, "y1")
-          }, {
-            x: _(t, "x2"),
-            y: _(t, "y2")
-          });
-        }(t);
-
-      case "polyline":
-        return rt(t);
-
-      case "polygon":
-        return function (t) {
-          var n = t.points;
-          return rt(t) + ot(n.getItem(n.numberOfItems - 1), n.getItem(0));
-        }(t);
-    }
-  }
-
-  function at(t, n) {
-    var e = n || {},
-        o = e.el || function (t) {
-      for (var n = t.parentNode; j.svg(n) && j.svg(n.parentNode);) {
-        n = n.parentNode;
-      }
-
-      return n;
-    }(t),
-        r = o.getBoundingClientRect(),
-        i = _(o, "viewBox"),
-        a = r.width,
-        s = r.height,
-        u = e.viewBox || (i ? i.split(" ") : [0, 0, a, s]);
-
-    return {
-      el: o,
-      viewBox: u,
-      x: u[0] / 1,
-      y: u[1] / 1,
-      w: a,
-      h: s,
-      vW: u[2],
-      vH: u[3]
-    };
-  }
-
-  et.version = "3.1.0", et.get = N, et.set = J, et.convertPx = z, et.penner = R, et.path = function (t) {
-    return {
-      el: t,
-      svg: at(t),
-      totalLength: it(t),
-      deltaCorrections: {
-        x: 4,
-        y: 5
-      }
-    };
-  }, et.getPathProgress = function (t, n, e) {
-    function o(e) {
-      void 0 === e && (e = 0);
-      var o = n * t.totalLength,
-          r = o + e >= 1 ? o + e : 0;
-      return t.el.getPointAtLength(r);
-    }
-
-    var r = at(t.el, t.svg),
-        i = o(),
-        a = o(-1),
-        s = o(1),
-        u = e ? 1 : r.w / r.vW,
-        p = e ? 1 : r.h / r.vH;
-    return {
-      x: (i.x - r.x) * u,
-      y: (i.y - r.y) * p,
-      angle: 180 * Math.atan2(s.y - a.y, s.x - a.x) / Math.PI
-    };
-  };
-  var st = et,
-      ut = {
-    transform: ["translateX", "translateY", "translateZ", "rotate", "rotateX", "rotateY", "rotateZ", "scale", "scaleX", "scaleY", "scaleZ", "skewX", "skewY", "perspective"]
-  };
-  var pt = ["cm", "mm", "in", "px", "pt", "pc", "em", "ex", "ch", "rem", "vw", "vh", "vmin", "vmax", "%"],
-      lt = ["deg", "rad", "grad", "turn"],
-      ct = "measurement",
-      ft = "color",
-      yt = {
-    npm_name: "@kissmybutton/motorcortex-anime",
-    incidents: [{
-      exportable: function (t) {
-        d(e, t);
-        var n = v(e);
-
-        function e() {
-          return p(this, e), n.apply(this, arguments);
-        }
-
-        return c(e, [{
-          key: "onGetContext",
-          value: function value() {
-            var t = {};
-            if (Object.prototype.hasOwnProperty.call(ut, this.attributeKey)) for (var n = ut[this.attributeKey], e = 0; e < n.length; e++) {
-              Object.prototype.hasOwnProperty.call(this.targetValue, n[e]) && (t[n[e]] = [this.getInitialValue()[n[e]], this.targetValue[n[e]]]);
-            } else t[this.attributeKey] = [this.getInitialValue(), this.targetValue];
-            this.target = st(function (t) {
-              for (var n = 1; n < arguments.length; n++) {
-                var e = null != arguments[n] ? arguments[n] : {};
-                n % 2 ? y(Object(e), !0).forEach(function (n) {
-                  f(t, n, e[n]);
-                }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(e)) : y(Object(e)).forEach(function (n) {
-                  Object.defineProperty(t, n, Object.getOwnPropertyDescriptor(e, n));
-                });
-              }
-
-              return t;
-            }({
-              autoplay: !1,
-              duration: this.props.duration,
-              easing: "linear",
-              targets: this.element
-            }, (this.attrs || {}).attrs || {}, {}, t));
-          }
-        }, {
-          key: "getScratchValue",
-          value: function value() {
-            if ("transform" === this.attributeKey) {
-              for (var t = {}, n = ut[this.attributeKey], e = function (t, n) {
-                var e = t.getComputedStyle(n).transform;
-                if ("" === e || "none" === e) return {};
-                var o,
-                    r,
-                    i,
-                    a,
-                    s,
-                    u,
-                    p,
-                    l,
-                    c = e.split("(")[1].split(")")[0].split(",");
-                return o = c, r = Math.atan2(o[1], o[0]), i = Math.pow(o[0], 2) + Math.pow(o[1], 2), a = Math.pow(o[2], 2) + Math.pow(o[3], 2), s = Math.sqrt(i), u = (o[0] * o[3] - o[2] * o[1]) / s, p = Math.atan2(o[0] * o[2] + o[1] * o[3], i), l = Math.atan2(o[1] * o[3] + o[0] * o[2], a), {
-                  rotate: r / (Math.PI / 180) + "deg",
-                  scaleX: s,
-                  scaleY: u,
-                  skewX: (1 === i ? p / (Math.PI / 180) : 0) + "deg",
-                  skewY: (1 === a ? l / (Math.PI / 180) : 0) + "deg",
-                  translateX: o[4] + "px",
-                  translateY: o[5] + "px"
-                };
-              }(this.context.window, this.element), o = 0; o < n.length; o++) {
-                Object.prototype.hasOwnProperty.call(e, n[o]) ? t[n[o]] = e[n[o]] : t[n[o]] = st.get(this.element, n[o]);
-              }
-
-              return t;
-            }
-
-            return st.get(this.element, this.attributeKey);
-          }
-        }, {
-          key: "onProgress",
-          value: function value(t) {
-            return this.target.seek(this.target.duration * t);
-          }
-        }]), e;
-      }(e.default.Effect),
-      name: "Anime",
-      attributesValidationRules: {
-        animatedAttrs: {
-          type: "object",
-          props: {
-            background: {
-              optional: !0,
-              type: ft
-            },
-            backgroundColor: {
-              optional: !0,
-              type: ft
-            },
-            backgroundPosition: {
-              optional: !0,
-              type: "string"
-            },
-            backgroundSize: {
-              optional: !0,
-              type: "string"
-            },
-            border: {
-              optional: !0,
-              type: "string"
-            },
-            borderBottom: {
-              optional: !0,
-              type: "string"
-            },
-            borderBottomColor: {
-              optional: !0,
-              type: ft
-            },
-            borderBottomLeftRadius: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            borderBottomRightRadius: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            borderBottomWidth: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            borderColor: {
-              optional: !0,
-              type: ft
-            },
-            borderEndEndRadius: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            borderEndStartRadius: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            borderImageOutset: {
-              optional: !0,
-              type: ct,
-              units: pt,
-              min: 0
-            },
-            borderImageSlice: {
-              optional: !0,
-              type: ct,
-              units: pt,
-              min: 0
-            },
-            borderImageWidth: {
-              optional: !0,
-              type: ct,
-              units: pt,
-              min: 0
-            },
-            borderLeft: {
-              optional: !0,
-              type: "string"
-            },
-            borderLeftColor: {
-              optional: !0,
-              type: ft
-            },
-            borderLeftWidth: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            borderRadius: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            borderRight: {
-              optional: !0,
-              type: "string"
-            },
-            borderRightColor: {
-              optional: !0,
-              type: ft
-            },
-            borderRightWidth: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            borderStartEndRadius: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            borderStartStartRadius: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            borderTop: {
-              optional: !0,
-              type: "string"
-            },
-            borderTopColor: {
-              optional: !0,
-              type: ft
-            },
-            borderTopLeftRadius: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            borderTopRightRadius: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            borderTopWidth: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            borderWidth: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            bottom: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            boxShadow: {
-              optional: !0,
-              type: "string"
-            },
-            caretColor: {
-              optional: !0,
-              type: ft
-            },
-            color: {
-              optional: !0,
-              type: ft
-            },
-            columnCount: {
-              optional: !0,
-              type: "number",
-              min: 0,
-              integer: !0
-            },
-            columnGap: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            columnRule: {
-              optional: !0,
-              type: "string"
-            },
-            columnRuleColor: {
-              optional: !0,
-              type: ft
-            },
-            columnRuleWidth: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            columns: {
-              optional: !0,
-              type: "number",
-              min: 0,
-              integer: !0
-            },
-            columnWidth: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            flex: {
-              optional: !0,
-              type: "number",
-              min: 0,
-              integer: !0
-            },
-            flexBasis: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            flexGrow: {
-              optional: !0,
-              type: "number",
-              min: 0,
-              integer: !0
-            },
-            flexShrink: {
-              optional: !0,
-              type: "number",
-              min: 0,
-              integer: !0
-            },
-            font: {
-              optional: !0,
-              type: "string"
-            },
-            fontSize: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            fontSizeAdjust: {
-              optional: !0,
-              type: ct,
-              units: pt,
-              min: 0
-            },
-            fontStretch: {
-              optional: !0,
-              type: ct,
-              units: ["%"]
-            },
-            fontWeight: {
-              optional: !0,
-              type: "string"
-            },
-            gap: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            gridColumnGap: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            gridGap: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            gridRowGap: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            gridTemplateColumns: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            gridTemplateRows: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            height: {
-              optional: !0,
-              type: ct,
-              units: pt,
-              min: 0
-            },
-            inset: {
-              optional: !0,
-              type: ct,
-              units: pt,
-              min: 0
-            },
-            insetBlock: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            insetBlockEnd: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            insetBlockStart: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            insetInline: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            insetInlineEnd: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            insetInlineStart: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            left: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            letterSpacing: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            lineClamp: {
-              optional: !0,
-              type: "number",
-              min: 0,
-              integer: !0
-            },
-            lineHeight: {
-              optional: !0,
-              type: ct,
-              units: pt,
-              min: 0
-            },
-            margin: {
-              optional: !0,
-              type: "string"
-            },
-            marginBottom: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            marginLeft: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            marginRight: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            marginTop: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            maskBorder: {
-              optional: !0,
-              type: ct,
-              units: pt,
-              min: 0
-            },
-            maskPosition: {
-              optional: !0,
-              type: "string"
-            },
-            maskSize: {
-              optional: !0,
-              type: "string"
-            },
-            maxHeight: {
-              optional: !0,
-              type: ct,
-              units: pt,
-              min: 0
-            },
-            maxWidth: {
-              optional: !0,
-              type: ct,
-              units: pt,
-              min: 0
-            },
-            objectPosition: {
-              optional: !0,
-              type: "string"
-            },
-            offset: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            offsetAnchor: {
-              optional: !0,
-              type: "string"
-            },
-            offsetDistance: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            offsetPath: {
-              optional: !0,
-              type: "string"
-            },
-            offsetPosition: {
-              optional: !0,
-              type: "string"
-            },
-            offsetRotate: {
-              optional: !0,
-              type: ct,
-              units: lt
-            },
-            opacity: {
-              optional: !0,
-              type: "number",
-              min: 0,
-              max: 1
-            },
-            order: {
-              optional: !0,
-              type: "number",
-              integer: !0
-            },
-            outline: {
-              optional: !0,
-              type: "string"
-            },
-            outlineColor: {
-              optional: !0,
-              type: ft
-            },
-            outlineOffset: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            outlineRadius: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            outlineRadiusBottomleft: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            outlineRadiusBottomright: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            outlineRadiusTopleft: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            outlineRadiusTopright: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            outlineWidth: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            padding: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            paddingBottom: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            paddingLeft: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            paddingRight: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            paddingTop: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            perspective: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            perspectiveOrigin: {
-              optional: !0,
-              type: "string"
-            },
-            right: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            rotate: {
-              optional: !0,
-              type: ct,
-              units: lt
-            },
-            rowGap: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scale: {
-              optional: !0,
-              type: "number",
-              min: 0
-            },
-            scrollbarColor: {
-              optional: !0,
-              type: ft
-            },
-            scrollMargin: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollMarginBlock: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollMarginBlockEnd: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollMarginBlockStart: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollMarginBottom: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollMarginInline: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollMarginInlineEnd: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollMarginInlineStart: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollMarginLeft: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollMarginRight: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollMarginTop: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollPadding: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollPaddingBlock: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollPaddingBlockEnd: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollPaddingBlockStart: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollPaddingBottom: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollPaddingInline: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollPaddingInlineEnd: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollPaddingInlineStart: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollPaddingLeft: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollPaddingRight: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollPaddingTop: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            scrollSnapCoordinate: {
-              optional: !0,
-              type: "string"
-            },
-            scrollSnapDestination: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            shapeImageThreshold: {
-              optional: !0,
-              type: "string"
-            },
-            shapeMargin: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            shapeOutside: {
-              optional: !0,
-              type: "string"
-            },
-            tabSize: {
-              optional: !0,
-              type: "string"
-            },
-            textDecoration: {
-              optional: !0,
-              type: "string"
-            },
-            textDecorationColor: {
-              optional: !0,
-              type: ft
-            },
-            textDecorationThickness: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            textEmphasis: {
-              optional: !0,
-              type: "string"
-            },
-            textEmphasisColor: {
-              optional: !0,
-              type: ft
-            },
-            textFillColor: {
-              optional: !0,
-              type: ft
-            },
-            textIndent: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            textShadow: {
-              optional: !0,
-              type: "string"
-            },
-            textStroke: {
-              optional: !0,
-              type: "string"
-            },
-            textStrokeColor: {
-              optional: !0,
-              type: ft
-            },
-            textUnderlineOffset: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            top: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            transform: {
-              optional: !0,
-              type: "object",
-              props: {
-                translateX: {
-                  type: ct,
-                  units: pt,
-                  optional: !0
-                },
-                translateY: {
-                  type: ct,
-                  units: pt,
-                  optional: !0
-                },
-                translateZ: {
-                  type: ct,
-                  units: pt,
-                  optional: !0
-                },
-                rotate: {
-                  type: ct,
-                  units: lt,
-                  optional: !0
-                },
-                rotateX: {
-                  type: ct,
-                  units: lt,
-                  optional: !0
-                },
-                rotateY: {
-                  type: ct,
-                  units: lt,
-                  optional: !0
-                },
-                rotateZ: {
-                  type: ct,
-                  units: lt,
-                  optional: !0
-                },
-                scale: {
-                  type: "number",
-                  min: 0,
-                  optional: !0
-                },
-                scaleX: {
-                  type: "number",
-                  min: 0,
-                  optional: !0
-                },
-                scaleY: {
-                  type: "number",
-                  min: 0,
-                  optional: !0
-                },
-                scaleZ: {
-                  type: "number",
-                  min: 0,
-                  optional: !0
-                },
-                skewX: {
-                  type: ct,
-                  units: lt,
-                  optional: !0
-                },
-                skewY: {
-                  type: ct,
-                  units: lt,
-                  optional: !0
-                },
-                perspective: {
-                  type: ct,
-                  units: pt,
-                  optional: !0
-                }
-              }
-            },
-            transformOrigin: {
-              optional: !0,
-              type: "string"
-            },
-            verticalAlign: {
-              optional: !0,
-              type: "string"
-            },
-            visibility: {
-              optional: !0,
-              type: "string"
-            },
-            width: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            wordSpacing: {
-              optional: !0,
-              type: ct,
-              units: pt
-            },
-            zIndex: {
-              optional: !0,
-              type: "number",
-              integer: !0
-            },
-            zoom: {
-              optional: !0,
-              type: ct,
-              units: ["%"],
-              min: 0
-            }
-          },
-          transformOrigin: {
-            type: "string"
-          },
-          verticalAlign: {
-            type: "string"
-          },
-          visibility: {
-            type: "string"
-          },
-          width: {
-            type: ct,
-            units: pt
-          },
-          wordSpacing: {
-            type: ct,
-            units: pt
-          },
-          zIndex: {
-            type: "number",
-            integer: !0
-          },
-          zoom: {
-            type: ct,
-            units: ["%"],
-            min: 0
-          }
-        }
       }
     }, {
-      exportable: function (t) {
-        d(e, t);
-        var n = v(e);
-
-        function e() {
-          return p(this, e), n.apply(this, arguments);
-        }
-
-        return c(e, [{
-          key: "onGetContext",
-          value: function value() {
-            var t = this.context.getElements(this.targetValue.pathElement)[0];
-            this.path = st.path(t), this.isPathTargetInsideSVG = this.element instanceof SVGElement;
-          }
-        }, {
-          key: "onProgress",
-          value: function value(t) {
-            var n = st.getPathProgress(this.path, t, this.isPathTargetInsideSVG),
-                e = "\n            translateX(".concat(n.x, "px) \n            translateY(").concat(n.y, "px) \n            rotate(").concat(n.angle, "deg)\n        ");
-            this.element.style.transform = e;
-          }
-        }]), e;
-      }(e.default.Effect),
-      name: "MotionPath",
-      attributesValidationRules: {
-        animatedAttrs: {
-          type: "object",
-          props: {
-            positionOn: {
-              type: "object",
-              props: {
-                pathElement: {
-                  type: "string"
-                }
-              }
-            }
-          }
-        }
+      key: "_getViewPortCenter",
+      value: function value() {
+        var t = this.el.parentNode;
+        return {
+          x: parseFloat(getComputedStyle(t, null).width.replace("px", "")) / 2,
+          y: parseFloat(getComputedStyle(t, null).height.replace("px", "")) / 2
+        };
       }
-    }],
-    compositeAttributes: ut
-  },
-      dt = e.default.loadPlugin(yt);
+    }, {
+      key: "_getIdlePosition",
+      value: function value() {
+        var t = this.el,
+            e = t.getBoundingClientRect(),
+            r = t.parentNode.getBoundingClientRect();
+        return {
+          x: e.left - r.left,
+          y: e.top - r.top
+        };
+      }
+    }, {
+      key: "calcXYZoom",
+      value: function value() {
+        var t = this.matrix,
+            e = this.idlePosition,
+            r = this.viewportCenter,
+            n = r.x - e.x,
+            o = r.y - e.y;
+        return s(s({}, {
+          x: n / t.scaleX,
+          y: o / t.scaleY
+        }), {}, {
+          zoom: t.scaleX
+        });
+      }
+    }, {
+      key: "createProgressFunction",
+      value: function value(t) {
+        console.log("in here");
+
+        var e = this._xyzoomToTranslate(t.start),
+            r = this._xyzoomToTranslate(t.target),
+            n = Math.sqrt(Math.pow(r.y - e.y, 2) + Math.pow(r.x - e.x, 2)),
+            o = Math.atan(r.y - e.y / r.x - e.x);
+
+        return function (t) {
+          var a = t * n;
+          return {
+            translateX: a * Math.cos(o) - e.x,
+            translateY: a * Math.sin(o) - e.y,
+            scale: (r.scale - e.scale) * t + e.scale
+          };
+        };
+      }
+    }, {
+      key: "_xyzoomToTranslate",
+      value: function value(t) {
+        var e = t.zoom * t.x,
+            r = t.zoom * t.y,
+            n = this.viewportCenter.x - e,
+            o = this.viewportCenter.y - r;
+        return {
+          x: n - this.idlePosition.x,
+          y: o - this.idlePosition.y,
+          scale: t.zoom
+        };
+      }
+    }]), t;
+  }();
+
   return {
     npm_name: "motorcortex-2dcam",
     incidents: [{
       exportable: function (t) {
-        !function (t, n) {
-          if ("function" != typeof n && null !== n) throw new TypeError("Super expression must either be null or a function");
-          t.prototype = Object.create(n && n.prototype, {
+        !function (t, e) {
+          if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
+          t.prototype = Object.create(e && e.prototype, {
             constructor: {
               value: t,
               writable: !0,
               configurable: !0
             }
-          }), n && a(t, n);
-        }(p, t);
-        var n,
-            e,
-            i,
-            s = u(p);
+          }), e && l(t, e);
+        }(r, t);
+        var e = p(r);
 
-        function p() {
-          return o(this, p), s.apply(this, arguments);
+        function r() {
+          return n(this, r), e.apply(this, arguments);
         }
 
-        return n = p, (e = [{
-          key: "incidents",
-          get: function get() {
-            var t = this.attrs.viewport;
-            this.attrs.viewport || (t = this.attrs.dims), this.attrs.dims.width, this.attrs.zoom, this.attrs.dims.height, this.attrs.zoom;
-            var n = this.attrs.zoom * this.attrs.center.x,
-                e = this.attrs.zoom * this.attrs.center.y,
-                o = {
-              x: t.width / 2 - n,
-              y: t.height / 2 - e
-            },
-                r = {
-              animatedAttrs: {
-                transform: {
-                  scaleX: this.attrs.zoom,
-                  scaleY: this.attrs.zoom,
-                  translateX: "".concat(o.x, "px"),
-                  translateY: "".concat(o.y, "px")
-                }
-              }
-            },
-                i = {
-              duration: this.attrs.duration,
-              easing: this.attrs.easing
-            };
-            return [{
-              incidentClass: dt.Anime,
-              attrs: r,
-              props: i,
-              position: 0
-            }];
+        return a(r, [{
+          key: "getScratchValue",
+          value: function value() {
+            return this.adaptor.calcXYZoom();
           }
-        }]) && r(n.prototype, e), i && r(n, i), p;
-      }(e.default.Combo),
+        }, {
+          key: "onGetContext",
+          value: function value() {
+            this.progressMethod = this.adaptor.createProgressFunction({
+              start: this.initialValue,
+              target: this.targetValue
+            });
+          }
+        }, {
+          key: "onProgress",
+          value: function value(t, e) {
+            var r = this.progressMethod(t);
+            console.log(r), this.element.style.transform = "translateX(".concat(r.translateX, "px) translateY(").concat(r.translateY, "px) scaleX(").concat(r.scale, ") scaleY(").concat(r.scale, ")");
+          }
+        }, {
+          key: "adaptor",
+          get: function get() {
+            return this._adaptor || (this._adaptor = new h(this.element)), this._adaptor;
+          }
+        }]), r;
+      }(r.default.Effect),
       name: "ZoomTo"
     }]
   };
 });
-
-/***/ }),
-
-/***/ 641:
-/***/ (function(module, __unused_webpack_exports, __webpack_require__) {
-
-/*!
- * @overview es6-promise - a tiny implementation of Promises/A+.
- * @copyright Copyright (c) 2014 Yehuda Katz, Tom Dale, Stefan Penner and contributors (Conversion to ES6 API by Jake Archibald)
- * @license   Licensed under MIT license
- *            See https://raw.githubusercontent.com/stefanpenner/es6-promise/master/LICENSE
- * @version   v4.2.8+1e68dce6
- */
-
-(function (global, factory) {
-	 true ? module.exports = factory() :
-	0;
-}(this, (function () { 'use strict';
-
-function objectOrFunction(x) {
-  var type = typeof x;
-  return x !== null && (type === 'object' || type === 'function');
-}
-
-function isFunction(x) {
-  return typeof x === 'function';
-}
-
-
-
-var _isArray = void 0;
-if (Array.isArray) {
-  _isArray = Array.isArray;
-} else {
-  _isArray = function (x) {
-    return Object.prototype.toString.call(x) === '[object Array]';
-  };
-}
-
-var isArray = _isArray;
-
-var len = 0;
-var vertxNext = void 0;
-var customSchedulerFn = void 0;
-
-var asap = function asap(callback, arg) {
-  queue[len] = callback;
-  queue[len + 1] = arg;
-  len += 2;
-  if (len === 2) {
-    // If len is 2, that means that we need to schedule an async flush.
-    // If additional callbacks are queued before the queue is flushed, they
-    // will be processed by this flush that we are scheduling.
-    if (customSchedulerFn) {
-      customSchedulerFn(flush);
-    } else {
-      scheduleFlush();
-    }
-  }
-};
-
-function setScheduler(scheduleFn) {
-  customSchedulerFn = scheduleFn;
-}
-
-function setAsap(asapFn) {
-  asap = asapFn;
-}
-
-var browserWindow = typeof window !== 'undefined' ? window : undefined;
-var browserGlobal = browserWindow || {};
-var BrowserMutationObserver = browserGlobal.MutationObserver || browserGlobal.WebKitMutationObserver;
-var isNode = typeof self === 'undefined' && typeof process !== 'undefined' && {}.toString.call(process) === '[object process]';
-
-// test for web worker but not in IE10
-var isWorker = typeof Uint8ClampedArray !== 'undefined' && typeof importScripts !== 'undefined' && typeof MessageChannel !== 'undefined';
-
-// node
-function useNextTick() {
-  // node version 0.10.x displays a deprecation warning when nextTick is used recursively
-  // see https://github.com/cujojs/when/issues/410 for details
-  return function () {
-    return process.nextTick(flush);
-  };
-}
-
-// vertx
-function useVertxTimer() {
-  if (typeof vertxNext !== 'undefined') {
-    return function () {
-      vertxNext(flush);
-    };
-  }
-
-  return useSetTimeout();
-}
-
-function useMutationObserver() {
-  var iterations = 0;
-  var observer = new BrowserMutationObserver(flush);
-  var node = document.createTextNode('');
-  observer.observe(node, { characterData: true });
-
-  return function () {
-    node.data = iterations = ++iterations % 2;
-  };
-}
-
-// web worker
-function useMessageChannel() {
-  var channel = new MessageChannel();
-  channel.port1.onmessage = flush;
-  return function () {
-    return channel.port2.postMessage(0);
-  };
-}
-
-function useSetTimeout() {
-  // Store setTimeout reference so es6-promise will be unaffected by
-  // other code modifying setTimeout (like sinon.useFakeTimers())
-  var globalSetTimeout = setTimeout;
-  return function () {
-    return globalSetTimeout(flush, 1);
-  };
-}
-
-var queue = new Array(1000);
-function flush() {
-  for (var i = 0; i < len; i += 2) {
-    var callback = queue[i];
-    var arg = queue[i + 1];
-
-    callback(arg);
-
-    queue[i] = undefined;
-    queue[i + 1] = undefined;
-  }
-
-  len = 0;
-}
-
-function attemptVertx() {
-  try {
-    var vertx = Function('return this')().require('vertx');
-    vertxNext = vertx.runOnLoop || vertx.runOnContext;
-    return useVertxTimer();
-  } catch (e) {
-    return useSetTimeout();
-  }
-}
-
-var scheduleFlush = void 0;
-// Decide what async method to use to triggering processing of queued callbacks:
-if (isNode) {
-  scheduleFlush = useNextTick();
-} else if (BrowserMutationObserver) {
-  scheduleFlush = useMutationObserver();
-} else if (isWorker) {
-  scheduleFlush = useMessageChannel();
-} else if (browserWindow === undefined && "function" === 'function') {
-  scheduleFlush = attemptVertx();
-} else {
-  scheduleFlush = useSetTimeout();
-}
-
-function then(onFulfillment, onRejection) {
-  var parent = this;
-
-  var child = new this.constructor(noop);
-
-  if (child[PROMISE_ID] === undefined) {
-    makePromise(child);
-  }
-
-  var _state = parent._state;
-
-
-  if (_state) {
-    var callback = arguments[_state - 1];
-    asap(function () {
-      return invokeCallback(_state, child, callback, parent._result);
-    });
-  } else {
-    subscribe(parent, child, onFulfillment, onRejection);
-  }
-
-  return child;
-}
-
-/**
-  `Promise.resolve` returns a promise that will become resolved with the
-  passed `value`. It is shorthand for the following:
-
-  ```javascript
-  let promise = new Promise(function(resolve, reject){
-    resolve(1);
-  });
-
-  promise.then(function(value){
-    // value === 1
-  });
-  ```
-
-  Instead of writing the above, your code now simply becomes the following:
-
-  ```javascript
-  let promise = Promise.resolve(1);
-
-  promise.then(function(value){
-    // value === 1
-  });
-  ```
-
-  @method resolve
-  @static
-  @param {Any} value value that the returned promise will be resolved with
-  Useful for tooling.
-  @return {Promise} a promise that will become fulfilled with the given
-  `value`
-*/
-function resolve$1(object) {
-  /*jshint validthis:true */
-  var Constructor = this;
-
-  if (object && typeof object === 'object' && object.constructor === Constructor) {
-    return object;
-  }
-
-  var promise = new Constructor(noop);
-  resolve(promise, object);
-  return promise;
-}
-
-var PROMISE_ID = Math.random().toString(36).substring(2);
-
-function noop() {}
-
-var PENDING = void 0;
-var FULFILLED = 1;
-var REJECTED = 2;
-
-function selfFulfillment() {
-  return new TypeError("You cannot resolve a promise with itself");
-}
-
-function cannotReturnOwn() {
-  return new TypeError('A promises callback cannot return that same promise.');
-}
-
-function tryThen(then$$1, value, fulfillmentHandler, rejectionHandler) {
-  try {
-    then$$1.call(value, fulfillmentHandler, rejectionHandler);
-  } catch (e) {
-    return e;
-  }
-}
-
-function handleForeignThenable(promise, thenable, then$$1) {
-  asap(function (promise) {
-    var sealed = false;
-    var error = tryThen(then$$1, thenable, function (value) {
-      if (sealed) {
-        return;
-      }
-      sealed = true;
-      if (thenable !== value) {
-        resolve(promise, value);
-      } else {
-        fulfill(promise, value);
-      }
-    }, function (reason) {
-      if (sealed) {
-        return;
-      }
-      sealed = true;
-
-      reject(promise, reason);
-    }, 'Settle: ' + (promise._label || ' unknown promise'));
-
-    if (!sealed && error) {
-      sealed = true;
-      reject(promise, error);
-    }
-  }, promise);
-}
-
-function handleOwnThenable(promise, thenable) {
-  if (thenable._state === FULFILLED) {
-    fulfill(promise, thenable._result);
-  } else if (thenable._state === REJECTED) {
-    reject(promise, thenable._result);
-  } else {
-    subscribe(thenable, undefined, function (value) {
-      return resolve(promise, value);
-    }, function (reason) {
-      return reject(promise, reason);
-    });
-  }
-}
-
-function handleMaybeThenable(promise, maybeThenable, then$$1) {
-  if (maybeThenable.constructor === promise.constructor && then$$1 === then && maybeThenable.constructor.resolve === resolve$1) {
-    handleOwnThenable(promise, maybeThenable);
-  } else {
-    if (then$$1 === undefined) {
-      fulfill(promise, maybeThenable);
-    } else if (isFunction(then$$1)) {
-      handleForeignThenable(promise, maybeThenable, then$$1);
-    } else {
-      fulfill(promise, maybeThenable);
-    }
-  }
-}
-
-function resolve(promise, value) {
-  if (promise === value) {
-    reject(promise, selfFulfillment());
-  } else if (objectOrFunction(value)) {
-    var then$$1 = void 0;
-    try {
-      then$$1 = value.then;
-    } catch (error) {
-      reject(promise, error);
-      return;
-    }
-    handleMaybeThenable(promise, value, then$$1);
-  } else {
-    fulfill(promise, value);
-  }
-}
-
-function publishRejection(promise) {
-  if (promise._onerror) {
-    promise._onerror(promise._result);
-  }
-
-  publish(promise);
-}
-
-function fulfill(promise, value) {
-  if (promise._state !== PENDING) {
-    return;
-  }
-
-  promise._result = value;
-  promise._state = FULFILLED;
-
-  if (promise._subscribers.length !== 0) {
-    asap(publish, promise);
-  }
-}
-
-function reject(promise, reason) {
-  if (promise._state !== PENDING) {
-    return;
-  }
-  promise._state = REJECTED;
-  promise._result = reason;
-
-  asap(publishRejection, promise);
-}
-
-function subscribe(parent, child, onFulfillment, onRejection) {
-  var _subscribers = parent._subscribers;
-  var length = _subscribers.length;
-
-
-  parent._onerror = null;
-
-  _subscribers[length] = child;
-  _subscribers[length + FULFILLED] = onFulfillment;
-  _subscribers[length + REJECTED] = onRejection;
-
-  if (length === 0 && parent._state) {
-    asap(publish, parent);
-  }
-}
-
-function publish(promise) {
-  var subscribers = promise._subscribers;
-  var settled = promise._state;
-
-  if (subscribers.length === 0) {
-    return;
-  }
-
-  var child = void 0,
-      callback = void 0,
-      detail = promise._result;
-
-  for (var i = 0; i < subscribers.length; i += 3) {
-    child = subscribers[i];
-    callback = subscribers[i + settled];
-
-    if (child) {
-      invokeCallback(settled, child, callback, detail);
-    } else {
-      callback(detail);
-    }
-  }
-
-  promise._subscribers.length = 0;
-}
-
-function invokeCallback(settled, promise, callback, detail) {
-  var hasCallback = isFunction(callback),
-      value = void 0,
-      error = void 0,
-      succeeded = true;
-
-  if (hasCallback) {
-    try {
-      value = callback(detail);
-    } catch (e) {
-      succeeded = false;
-      error = e;
-    }
-
-    if (promise === value) {
-      reject(promise, cannotReturnOwn());
-      return;
-    }
-  } else {
-    value = detail;
-  }
-
-  if (promise._state !== PENDING) {
-    // noop
-  } else if (hasCallback && succeeded) {
-    resolve(promise, value);
-  } else if (succeeded === false) {
-    reject(promise, error);
-  } else if (settled === FULFILLED) {
-    fulfill(promise, value);
-  } else if (settled === REJECTED) {
-    reject(promise, value);
-  }
-}
-
-function initializePromise(promise, resolver) {
-  try {
-    resolver(function resolvePromise(value) {
-      resolve(promise, value);
-    }, function rejectPromise(reason) {
-      reject(promise, reason);
-    });
-  } catch (e) {
-    reject(promise, e);
-  }
-}
-
-var id = 0;
-function nextId() {
-  return id++;
-}
-
-function makePromise(promise) {
-  promise[PROMISE_ID] = id++;
-  promise._state = undefined;
-  promise._result = undefined;
-  promise._subscribers = [];
-}
-
-function validationError() {
-  return new Error('Array Methods must be provided an Array');
-}
-
-var Enumerator = function () {
-  function Enumerator(Constructor, input) {
-    this._instanceConstructor = Constructor;
-    this.promise = new Constructor(noop);
-
-    if (!this.promise[PROMISE_ID]) {
-      makePromise(this.promise);
-    }
-
-    if (isArray(input)) {
-      this.length = input.length;
-      this._remaining = input.length;
-
-      this._result = new Array(this.length);
-
-      if (this.length === 0) {
-        fulfill(this.promise, this._result);
-      } else {
-        this.length = this.length || 0;
-        this._enumerate(input);
-        if (this._remaining === 0) {
-          fulfill(this.promise, this._result);
-        }
-      }
-    } else {
-      reject(this.promise, validationError());
-    }
-  }
-
-  Enumerator.prototype._enumerate = function _enumerate(input) {
-    for (var i = 0; this._state === PENDING && i < input.length; i++) {
-      this._eachEntry(input[i], i);
-    }
-  };
-
-  Enumerator.prototype._eachEntry = function _eachEntry(entry, i) {
-    var c = this._instanceConstructor;
-    var resolve$$1 = c.resolve;
-
-
-    if (resolve$$1 === resolve$1) {
-      var _then = void 0;
-      var error = void 0;
-      var didError = false;
-      try {
-        _then = entry.then;
-      } catch (e) {
-        didError = true;
-        error = e;
-      }
-
-      if (_then === then && entry._state !== PENDING) {
-        this._settledAt(entry._state, i, entry._result);
-      } else if (typeof _then !== 'function') {
-        this._remaining--;
-        this._result[i] = entry;
-      } else if (c === Promise$1) {
-        var promise = new c(noop);
-        if (didError) {
-          reject(promise, error);
-        } else {
-          handleMaybeThenable(promise, entry, _then);
-        }
-        this._willSettleAt(promise, i);
-      } else {
-        this._willSettleAt(new c(function (resolve$$1) {
-          return resolve$$1(entry);
-        }), i);
-      }
-    } else {
-      this._willSettleAt(resolve$$1(entry), i);
-    }
-  };
-
-  Enumerator.prototype._settledAt = function _settledAt(state, i, value) {
-    var promise = this.promise;
-
-
-    if (promise._state === PENDING) {
-      this._remaining--;
-
-      if (state === REJECTED) {
-        reject(promise, value);
-      } else {
-        this._result[i] = value;
-      }
-    }
-
-    if (this._remaining === 0) {
-      fulfill(promise, this._result);
-    }
-  };
-
-  Enumerator.prototype._willSettleAt = function _willSettleAt(promise, i) {
-    var enumerator = this;
-
-    subscribe(promise, undefined, function (value) {
-      return enumerator._settledAt(FULFILLED, i, value);
-    }, function (reason) {
-      return enumerator._settledAt(REJECTED, i, reason);
-    });
-  };
-
-  return Enumerator;
-}();
-
-/**
-  `Promise.all` accepts an array of promises, and returns a new promise which
-  is fulfilled with an array of fulfillment values for the passed promises, or
-  rejected with the reason of the first passed promise to be rejected. It casts all
-  elements of the passed iterable to promises as it runs this algorithm.
-
-  Example:
-
-  ```javascript
-  let promise1 = resolve(1);
-  let promise2 = resolve(2);
-  let promise3 = resolve(3);
-  let promises = [ promise1, promise2, promise3 ];
-
-  Promise.all(promises).then(function(array){
-    // The array here would be [ 1, 2, 3 ];
-  });
-  ```
-
-  If any of the `promises` given to `all` are rejected, the first promise
-  that is rejected will be given as an argument to the returned promises's
-  rejection handler. For example:
-
-  Example:
-
-  ```javascript
-  let promise1 = resolve(1);
-  let promise2 = reject(new Error("2"));
-  let promise3 = reject(new Error("3"));
-  let promises = [ promise1, promise2, promise3 ];
-
-  Promise.all(promises).then(function(array){
-    // Code here never runs because there are rejected promises!
-  }, function(error) {
-    // error.message === "2"
-  });
-  ```
-
-  @method all
-  @static
-  @param {Array} entries array of promises
-  @param {String} label optional string for labeling the promise.
-  Useful for tooling.
-  @return {Promise} promise that is fulfilled when all `promises` have been
-  fulfilled, or rejected if any of them become rejected.
-  @static
-*/
-function all(entries) {
-  return new Enumerator(this, entries).promise;
-}
-
-/**
-  `Promise.race` returns a new promise which is settled in the same way as the
-  first passed promise to settle.
-
-  Example:
-
-  ```javascript
-  let promise1 = new Promise(function(resolve, reject){
-    setTimeout(function(){
-      resolve('promise 1');
-    }, 200);
-  });
-
-  let promise2 = new Promise(function(resolve, reject){
-    setTimeout(function(){
-      resolve('promise 2');
-    }, 100);
-  });
-
-  Promise.race([promise1, promise2]).then(function(result){
-    // result === 'promise 2' because it was resolved before promise1
-    // was resolved.
-  });
-  ```
-
-  `Promise.race` is deterministic in that only the state of the first
-  settled promise matters. For example, even if other promises given to the
-  `promises` array argument are resolved, but the first settled promise has
-  become rejected before the other promises became fulfilled, the returned
-  promise will become rejected:
-
-  ```javascript
-  let promise1 = new Promise(function(resolve, reject){
-    setTimeout(function(){
-      resolve('promise 1');
-    }, 200);
-  });
-
-  let promise2 = new Promise(function(resolve, reject){
-    setTimeout(function(){
-      reject(new Error('promise 2'));
-    }, 100);
-  });
-
-  Promise.race([promise1, promise2]).then(function(result){
-    // Code here never runs
-  }, function(reason){
-    // reason.message === 'promise 2' because promise 2 became rejected before
-    // promise 1 became fulfilled
-  });
-  ```
-
-  An example real-world use case is implementing timeouts:
-
-  ```javascript
-  Promise.race([ajax('foo.json'), timeout(5000)])
-  ```
-
-  @method race
-  @static
-  @param {Array} promises array of promises to observe
-  Useful for tooling.
-  @return {Promise} a promise which settles in the same way as the first passed
-  promise to settle.
-*/
-function race(entries) {
-  /*jshint validthis:true */
-  var Constructor = this;
-
-  if (!isArray(entries)) {
-    return new Constructor(function (_, reject) {
-      return reject(new TypeError('You must pass an array to race.'));
-    });
-  } else {
-    return new Constructor(function (resolve, reject) {
-      var length = entries.length;
-      for (var i = 0; i < length; i++) {
-        Constructor.resolve(entries[i]).then(resolve, reject);
-      }
-    });
-  }
-}
-
-/**
-  `Promise.reject` returns a promise rejected with the passed `reason`.
-  It is shorthand for the following:
-
-  ```javascript
-  let promise = new Promise(function(resolve, reject){
-    reject(new Error('WHOOPS'));
-  });
-
-  promise.then(function(value){
-    // Code here doesn't run because the promise is rejected!
-  }, function(reason){
-    // reason.message === 'WHOOPS'
-  });
-  ```
-
-  Instead of writing the above, your code now simply becomes the following:
-
-  ```javascript
-  let promise = Promise.reject(new Error('WHOOPS'));
-
-  promise.then(function(value){
-    // Code here doesn't run because the promise is rejected!
-  }, function(reason){
-    // reason.message === 'WHOOPS'
-  });
-  ```
-
-  @method reject
-  @static
-  @param {Any} reason value that the returned promise will be rejected with.
-  Useful for tooling.
-  @return {Promise} a promise rejected with the given `reason`.
-*/
-function reject$1(reason) {
-  /*jshint validthis:true */
-  var Constructor = this;
-  var promise = new Constructor(noop);
-  reject(promise, reason);
-  return promise;
-}
-
-function needsResolver() {
-  throw new TypeError('You must pass a resolver function as the first argument to the promise constructor');
-}
-
-function needsNew() {
-  throw new TypeError("Failed to construct 'Promise': Please use the 'new' operator, this object constructor cannot be called as a function.");
-}
-
-/**
-  Promise objects represent the eventual result of an asynchronous operation. The
-  primary way of interacting with a promise is through its `then` method, which
-  registers callbacks to receive either a promise's eventual value or the reason
-  why the promise cannot be fulfilled.
-
-  Terminology
-  -----------
-
-  - `promise` is an object or function with a `then` method whose behavior conforms to this specification.
-  - `thenable` is an object or function that defines a `then` method.
-  - `value` is any legal JavaScript value (including undefined, a thenable, or a promise).
-  - `exception` is a value that is thrown using the throw statement.
-  - `reason` is a value that indicates why a promise was rejected.
-  - `settled` the final resting state of a promise, fulfilled or rejected.
-
-  A promise can be in one of three states: pending, fulfilled, or rejected.
-
-  Promises that are fulfilled have a fulfillment value and are in the fulfilled
-  state.  Promises that are rejected have a rejection reason and are in the
-  rejected state.  A fulfillment value is never a thenable.
-
-  Promises can also be said to *resolve* a value.  If this value is also a
-  promise, then the original promise's settled state will match the value's
-  settled state.  So a promise that *resolves* a promise that rejects will
-  itself reject, and a promise that *resolves* a promise that fulfills will
-  itself fulfill.
-
-
-  Basic Usage:
-  ------------
-
-  ```js
-  let promise = new Promise(function(resolve, reject) {
-    // on success
-    resolve(value);
-
-    // on failure
-    reject(reason);
-  });
-
-  promise.then(function(value) {
-    // on fulfillment
-  }, function(reason) {
-    // on rejection
-  });
-  ```
-
-  Advanced Usage:
-  ---------------
-
-  Promises shine when abstracting away asynchronous interactions such as
-  `XMLHttpRequest`s.
-
-  ```js
-  function getJSON(url) {
-    return new Promise(function(resolve, reject){
-      let xhr = new XMLHttpRequest();
-
-      xhr.open('GET', url);
-      xhr.onreadystatechange = handler;
-      xhr.responseType = 'json';
-      xhr.setRequestHeader('Accept', 'application/json');
-      xhr.send();
-
-      function handler() {
-        if (this.readyState === this.DONE) {
-          if (this.status === 200) {
-            resolve(this.response);
-          } else {
-            reject(new Error('getJSON: `' + url + '` failed with status: [' + this.status + ']'));
-          }
-        }
-      };
-    });
-  }
-
-  getJSON('/posts.json').then(function(json) {
-    // on fulfillment
-  }, function(reason) {
-    // on rejection
-  });
-  ```
-
-  Unlike callbacks, promises are great composable primitives.
-
-  ```js
-  Promise.all([
-    getJSON('/posts'),
-    getJSON('/comments')
-  ]).then(function(values){
-    values[0] // => postsJSON
-    values[1] // => commentsJSON
-
-    return values;
-  });
-  ```
-
-  @class Promise
-  @param {Function} resolver
-  Useful for tooling.
-  @constructor
-*/
-
-var Promise$1 = function () {
-  function Promise(resolver) {
-    this[PROMISE_ID] = nextId();
-    this._result = this._state = undefined;
-    this._subscribers = [];
-
-    if (noop !== resolver) {
-      typeof resolver !== 'function' && needsResolver();
-      this instanceof Promise ? initializePromise(this, resolver) : needsNew();
-    }
-  }
-
-  /**
-  The primary way of interacting with a promise is through its `then` method,
-  which registers callbacks to receive either a promise's eventual value or the
-  reason why the promise cannot be fulfilled.
-   ```js
-  findUser().then(function(user){
-    // user is available
-  }, function(reason){
-    // user is unavailable, and you are given the reason why
-  });
-  ```
-   Chaining
-  --------
-   The return value of `then` is itself a promise.  This second, 'downstream'
-  promise is resolved with the return value of the first promise's fulfillment
-  or rejection handler, or rejected if the handler throws an exception.
-   ```js
-  findUser().then(function (user) {
-    return user.name;
-  }, function (reason) {
-    return 'default name';
-  }).then(function (userName) {
-    // If `findUser` fulfilled, `userName` will be the user's name, otherwise it
-    // will be `'default name'`
-  });
-   findUser().then(function (user) {
-    throw new Error('Found user, but still unhappy');
-  }, function (reason) {
-    throw new Error('`findUser` rejected and we're unhappy');
-  }).then(function (value) {
-    // never reached
-  }, function (reason) {
-    // if `findUser` fulfilled, `reason` will be 'Found user, but still unhappy'.
-    // If `findUser` rejected, `reason` will be '`findUser` rejected and we're unhappy'.
-  });
-  ```
-  If the downstream promise does not specify a rejection handler, rejection reasons will be propagated further downstream.
-   ```js
-  findUser().then(function (user) {
-    throw new PedagogicalException('Upstream error');
-  }).then(function (value) {
-    // never reached
-  }).then(function (value) {
-    // never reached
-  }, function (reason) {
-    // The `PedgagocialException` is propagated all the way down to here
-  });
-  ```
-   Assimilation
-  ------------
-   Sometimes the value you want to propagate to a downstream promise can only be
-  retrieved asynchronously. This can be achieved by returning a promise in the
-  fulfillment or rejection handler. The downstream promise will then be pending
-  until the returned promise is settled. This is called *assimilation*.
-   ```js
-  findUser().then(function (user) {
-    return findCommentsByAuthor(user);
-  }).then(function (comments) {
-    // The user's comments are now available
-  });
-  ```
-   If the assimliated promise rejects, then the downstream promise will also reject.
-   ```js
-  findUser().then(function (user) {
-    return findCommentsByAuthor(user);
-  }).then(function (comments) {
-    // If `findCommentsByAuthor` fulfills, we'll have the value here
-  }, function (reason) {
-    // If `findCommentsByAuthor` rejects, we'll have the reason here
-  });
-  ```
-   Simple Example
-  --------------
-   Synchronous Example
-   ```javascript
-  let result;
-   try {
-    result = findResult();
-    // success
-  } catch(reason) {
-    // failure
-  }
-  ```
-   Errback Example
-   ```js
-  findResult(function(result, err){
-    if (err) {
-      // failure
-    } else {
-      // success
-    }
-  });
-  ```
-   Promise Example;
-   ```javascript
-  findResult().then(function(result){
-    // success
-  }, function(reason){
-    // failure
-  });
-  ```
-   Advanced Example
-  --------------
-   Synchronous Example
-   ```javascript
-  let author, books;
-   try {
-    author = findAuthor();
-    books  = findBooksByAuthor(author);
-    // success
-  } catch(reason) {
-    // failure
-  }
-  ```
-   Errback Example
-   ```js
-   function foundBooks(books) {
-   }
-   function failure(reason) {
-   }
-   findAuthor(function(author, err){
-    if (err) {
-      failure(err);
-      // failure
-    } else {
-      try {
-        findBoooksByAuthor(author, function(books, err) {
-          if (err) {
-            failure(err);
-          } else {
-            try {
-              foundBooks(books);
-            } catch(reason) {
-              failure(reason);
-            }
-          }
-        });
-      } catch(error) {
-        failure(err);
-      }
-      // success
-    }
-  });
-  ```
-   Promise Example;
-   ```javascript
-  findAuthor().
-    then(findBooksByAuthor).
-    then(function(books){
-      // found books
-  }).catch(function(reason){
-    // something went wrong
-  });
-  ```
-   @method then
-  @param {Function} onFulfilled
-  @param {Function} onRejected
-  Useful for tooling.
-  @return {Promise}
-  */
-
-  /**
-  `catch` is simply sugar for `then(undefined, onRejection)` which makes it the same
-  as the catch block of a try/catch statement.
-  ```js
-  function findAuthor(){
-  throw new Error('couldn't find that author');
-  }
-  // synchronous
-  try {
-  findAuthor();
-  } catch(reason) {
-  // something went wrong
-  }
-  // async with promises
-  findAuthor().catch(function(reason){
-  // something went wrong
-  });
-  ```
-  @method catch
-  @param {Function} onRejection
-  Useful for tooling.
-  @return {Promise}
-  */
-
-
-  Promise.prototype.catch = function _catch(onRejection) {
-    return this.then(null, onRejection);
-  };
-
-  /**
-    `finally` will be invoked regardless of the promise's fate just as native
-    try/catch/finally behaves
-  
-    Synchronous example:
-  
-    ```js
-    findAuthor() {
-      if (Math.random() > 0.5) {
-        throw new Error();
-      }
-      return new Author();
-    }
-  
-    try {
-      return findAuthor(); // succeed or fail
-    } catch(error) {
-      return findOtherAuther();
-    } finally {
-      // always runs
-      // doesn't affect the return value
-    }
-    ```
-  
-    Asynchronous example:
-  
-    ```js
-    findAuthor().catch(function(reason){
-      return findOtherAuther();
-    }).finally(function(){
-      // author was either found, or not
-    });
-    ```
-  
-    @method finally
-    @param {Function} callback
-    @return {Promise}
-  */
-
-
-  Promise.prototype.finally = function _finally(callback) {
-    var promise = this;
-    var constructor = promise.constructor;
-
-    if (isFunction(callback)) {
-      return promise.then(function (value) {
-        return constructor.resolve(callback()).then(function () {
-          return value;
-        });
-      }, function (reason) {
-        return constructor.resolve(callback()).then(function () {
-          throw reason;
-        });
-      });
-    }
-
-    return promise.then(callback, callback);
-  };
-
-  return Promise;
-}();
-
-Promise$1.prototype.then = then;
-Promise$1.all = all;
-Promise$1.race = race;
-Promise$1.resolve = resolve$1;
-Promise$1.reject = reject$1;
-Promise$1._setScheduler = setScheduler;
-Promise$1._setAsap = setAsap;
-Promise$1._asap = asap;
-
-/*global self*/
-function polyfill() {
-  var local = void 0;
-
-  if (typeof __webpack_require__.g !== 'undefined') {
-    local = __webpack_require__.g;
-  } else if (typeof self !== 'undefined') {
-    local = self;
-  } else {
-    try {
-      local = Function('return this')();
-    } catch (e) {
-      throw new Error('polyfill failed because global object is unavailable in this environment');
-    }
-  }
-
-  var P = local.Promise;
-
-  if (P) {
-    var promiseToString = null;
-    try {
-      promiseToString = Object.prototype.toString.call(P.resolve());
-    } catch (e) {
-      // silently ignored
-    }
-
-    if (promiseToString === '[object Promise]' && !P.cast) {
-      return;
-    }
-  }
-
-  local.Promise = Promise$1;
-}
-
-// Strange compat..
-Promise$1.polyfill = polyfill;
-Promise$1.Promise = Promise$1;
-
-return Promise$1;
-
-})));
-
-
-
-//# sourceMappingURL=es6-promise.map
-
 
 /***/ }),
 
@@ -3238,7 +524,7 @@ return Promise$1;
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "077c50954b93a13d995e"
+/******/ 		__webpack_require__.h = () => "8a03f5744df1d7771d2e"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

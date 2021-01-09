@@ -21,8 +21,8 @@ export default class Adaptor {
         }
 
         return {
-            x: viewportDims.x/2,
-            y: viewportDims.y/2
+            x: viewportDims.width/2,
+            y: viewportDims.height/2
         };
     }
 
@@ -40,7 +40,7 @@ export default class Adaptor {
         // the absolute position of our element on its parent
         return {
             x: elBoundingRect.left - parentBoundingRect.left,
-            Y: elBoundingRect.top - parentBoundingRect.top
+            y: elBoundingRect.top - parentBoundingRect.top
         }
     }
 
@@ -72,14 +72,20 @@ export default class Adaptor {
      * @param {object} params - {start{x,y,zoom}, target{x,y.zoom}}
      */
     createProgressFunction(params){
+        console.log('in here');
         const start = this._xyzoomToTranslate(params.start);
         const target = this._xyzoomToTranslate(params.target);
 
         const lineLength = Math.sqrt(Math.pow(target.y - start.y, 2) + Math.pow(target.x - start.x, 2));
+        const theta = Math.atan(target.y - start.y / target.x - start.x);
 
         return function progress(fraction){
             const distanceOnLine = fraction * lineLength;
-
+            return {
+                translateX: distanceOnLine * Math.cos(theta) - start.x,
+                translateY: distanceOnLine * Math.sin(theta) - start.y,
+                scale: (target.scale - start.scale) * fraction + start.scale
+            }
         }
     }
 
@@ -90,8 +96,8 @@ export default class Adaptor {
             y: vals.zoom * vals.y
         };
         const move = {
-            x: this.viewportCenter.x - vals.x,
-            y: this.viewportCenter.y - vals.y
+            x: this.viewportCenter.x - targetCenter.x,
+            y: this.viewportCenter.y - targetCenter.y
         }
         return {
             x: move.x - this.idlePosition.x,
