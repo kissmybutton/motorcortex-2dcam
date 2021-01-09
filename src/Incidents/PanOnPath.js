@@ -1,8 +1,5 @@
-/*
-M 232.893 552.922 C -14.921 312.7 959.84 -88.108 1251.138 194.266 C 1929.119 182.67 1554.691 582.533 1351.294 586.012 C 898.989 540.454 1202.984 713.367 1347.306 727.904
-*/
-import MotorCortex from '@kissmybutton/motorcortex';
 import ZoomTo from './ZoomTo';
+const xmlns = "http://www.w3.org/2000/svg";
 
 /**
  * The attrs that this Incident expect are almost identical with its "brother's"
@@ -42,8 +39,10 @@ import ZoomTo from './ZoomTo';
 export default class FocusAlongPath extends ZoomTo{
     onInitialise(){
         // create a data repository that will hold usefull info of our Incident
-        const duration = this.duration;
-        const path = document.createElement('path');
+        const duration = this.props.duration;
+        const path = document.createElementNS(xmlns, "path");
+        path.setAttributeNS(null, 'd', this.targetValue.path);
+        console.log(path);
         
         this.data = {
             path,
@@ -56,8 +55,8 @@ export default class FocusAlongPath extends ZoomTo{
             transitionDuration: !this.attrs.transition ? 0 : this.attrs.transition,
             get alongPathDuration() { return duration - this.transitionDuration; }
         };
-        this.data.finalPoint = path.getPointAtLength(data.endTo);
-        this.data.startPoint = path.getPointAtLength(data.startFrom);
+        this.data.finalPoint = path.getPointAtLength(this.data.endTo);
+        this.data.startPoint = path.getPointAtLength(this.data.startFrom);
 
         // then set the final values of the Incident in terms of x, y, zoom so the 
         // following Incidents can use it

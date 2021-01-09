@@ -32,66 +32,6 @@ const clip = new MotorCortex.HTMLClip({
     }
 });
 
-// const zoomTo1 = new MyPlugin.ZoomTo({
-//     dims: {
-//         width: 1920,
-//         height: 1080
-//     },
-//     viewport: {
-//         width: 640,
-//         height: 360
-//     },
-//     center: {
-//         x: 700,
-//         y: 342
-//     },
-//     zoom: 0.7,
-//     duration: 2000,
-//     easing: 'easeOutSine'
-// }, {
-//     selector: '.img'
-// });
-
-// const zoomTo2 = new MyPlugin.ZoomTo({
-//     dims: {
-//         width: 1920,
-//         height: 1080
-//     },
-//     viewport: {
-//         width: 640,
-//         height: 360
-//     },
-//     center: {
-//         x: 1280,
-//         y: 150
-//     },
-//     zoom: 1.2,
-//     duration: 4000,
-//     easing: 'easeInOutSine'
-// }, {
-//     selector: '.img'
-// });
-
-// const zoomTo3 = new MyPlugin.ZoomTo({
-//     dims: {
-//         width: 1920,
-//         height: 1080
-//     },
-//     viewport: {
-//         width: 640,
-//         height: 360
-//     },
-//     center: {
-//         x: 1375,
-//         y: 460
-//     },
-//     zoom: 1,
-//     duration: 3000,
-//     easing: 'easeInOutSine'
-// }, {
-//     selector: '.img'
-// });
-
 const zoomTo1 = new MyPlugin.ZoomTo({
     animatedAttrs: {
         position: {
@@ -134,8 +74,20 @@ const zoomTo3 = new MyPlugin.ZoomTo({
     easing: 'easeInOutSine'
 });
 
+const pop1 = new MyPlugin.PanOnPath({
+    transition: 1000,
+    animatedAttrs: {
+        position: {
+            path: 'M 232.893 552.922 C -14.921 312.7 959.84 -88.108 1251.138 194.266 C 1929.119 182.67 1554.691 582.533 1351.294 586.012 C 898.989 540.454 1202.984 713.367 1347.306 727.904'
+        }
+    }
+}, {
+    duration: 3000,
+    selector: '.img'
+})
 
 clip.addIncident(zoomTo1, 0);
 clip.addIncident(zoomTo2, 2000);
 clip.addIncident(zoomTo3, 6000);
+clip.addIncident(pop1, 9000);
 const player = new Player({clip});

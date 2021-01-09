@@ -142,12 +142,14 @@ export default class Adaptor {
 
         const transitionFraction = data.transitionDuration/(data.transitionDuration + data.alongPathDuration);
         const alongPathFraction = (data.alongPathDuration/(data.transitionDuration + data.alongPathDuration));
-        return function(progress){
+        return (progress) => {
             if(data.transitionDuration > 0 && transitionFraction < progress){
                 return transitionProgress(progress / transitionFraction);
             }
             const inPathProgress = (progress - transitionFraction) / alongPathFraction;
+            console.log(inPathProgress);
             const point = data.path.getPointAtLength(inPathProgress); // x, y -> that's where we want to be
+            console.log(point);
             return this._xyzoomToTranslate({...point, zoom: data.zoom});
         }
     }
