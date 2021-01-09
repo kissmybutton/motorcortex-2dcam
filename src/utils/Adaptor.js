@@ -72,18 +72,25 @@ export default class Adaptor {
      * @param {object} params - {start{x,y,zoom}, target{x,y.zoom}}
      */
     createProgressFunction(params){
-        console.log('in here');
         const start = this._xyzoomToTranslate(params.start);
         const target = this._xyzoomToTranslate(params.target);
 
+        // first we need to calculate the angle and the distance that we are going to use for our calculations
+        const theta = Math.atan(Math.abs(target.y - start.y) / Math.abs(target.x - start.x));
         const lineLength = Math.sqrt(Math.pow(target.y - start.y, 2) + Math.pow(target.x - start.x, 2));
-        const theta = Math.atan(target.y - start.y / target.x - start.x);
+
+        // secondly we need to identify the multipliers that we are going to use to calculate for our x and y
+        // depending on the relative position of our target compared to our start
+        let _x = 1,
+            _y =1;
+        if(target.x < start.x) _x = -1;
+        if(target.y < start.y) _y = -1;
 
         return function progress(fraction){
             const distanceOnLine = fraction * lineLength;
             return {
-                translateX: distanceOnLine * Math.cos(theta) - start.x,
-                translateY: distanceOnLine * Math.sin(theta) - start.y,
+                translateX: _x * distanceOnLine * Math.cos(theta) + start.x,
+                translateY: _y * distanceOnLine * Math.sin(theta) + start.y,
                 scale: (target.scale - start.scale) * fraction + start.scale
             }
         }

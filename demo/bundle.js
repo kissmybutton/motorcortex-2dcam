@@ -347,13 +347,14 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     }, {
       key: "createProgressFunction",
       value: function value(t) {
-        console.log("in here");
+        console.log("in createProgressFunction");
 
         var e = this._xyzoomToTranslate(t.start),
-            r = this._xyzoomToTranslate(t.target),
-            n = Math.sqrt(Math.pow(r.y - e.y, 2) + Math.pow(r.x - e.x, 2)),
-            o = Math.atan(r.y - e.y / r.x - e.x);
+            r = this._xyzoomToTranslate(t.target);
 
+        console.log("start and end", e, r);
+        var n = Math.sqrt(Math.pow(r.y - e.y, 2) + Math.pow(r.x - e.x, 2)),
+            o = Math.atan(r.y - e.y / r.x - e.x);
         return function (t) {
           var a = t * n;
           return {
@@ -524,7 +525,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "8a03f5744df1d7771d2e"
+/******/ 		__webpack_require__.h = () => "d5d046a10e227ae10da9"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

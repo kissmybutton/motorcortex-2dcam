@@ -138,5 +138,4 @@ const zoomTo3 = new MyPlugin.ZoomTo({
 clip.addIncident(zoomTo1, 0);
 clip.addIncident(zoomTo2, 2000);
 clip.addIncident(zoomTo3, 6000);
-console.log(clip);
 const player = new Player({clip});
