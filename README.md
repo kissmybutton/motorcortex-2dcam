@@ -4,7 +4,7 @@ any given point of any element.
 You can move your camera around, zoom and unzoom, follow paths, all
 via its easy to use Incidents.
 
-(Demo)[https://kissmybutton.github.io/motorcortex-2dcam/demo/]
+[Demo](https://kissmybutton.github.io/motorcortex-2dcam/demo/)
 
 ## Installation
 
@@ -102,5 +102,3 @@ the carent camera position to the point 0 position in the given milliseconds. Th
 Incident will not be affected as the movement on the actual path will be
 less by "transition" milliseconds. "transition" of course is optional with default value = 0.
 
-
-[Demo:](https://kissmybutton.github.io/motorcortex-video/demo/)
