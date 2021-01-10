@@ -7,13 +7,76 @@ export default {
     {
         exportable: ZoomTo,
         name: "ZoomTo",
-      // define your attributeValidationRules so MotorCortex can automatically validate them on instantiation 
-      // also so your Incidents are directly embedable to DonkeyClip
-    //   attributesValidationRules: {}
+        attributesValidationRules: {
+            animatedAttrs: {
+                type: 'object',
+                props: {
+                    position: {
+                        type: 'object',
+                        props: {
+                            x: {
+                                type: 'number',
+                                optional: true,
+                                min: 0
+                            },
+                            y: {
+                                type: 'number',
+                                optional: true,
+                                min: 0
+                            },
+                            zoom: {
+                                type: 'number',
+                                optional: true,
+                                min: 0
+                            }
+                        }   
+                    }
+                }
+            }
+        }
     },
     {
         exportable: PanOnPath,
-        name: 'PanOnPath'
+        name: 'PanOnPath',
+        attributesValidationRules: {
+            animatedAttrs: {
+                type: 'object',
+                props: {
+                    position: {
+                        type: 'object',
+                        props: {
+                            path: {
+                                type: 'string',
+                                optional: false
+                            },
+                            zoom: {
+                                type: 'number',
+                                optional: true,
+                                min: 0
+                            }
+                        }       
+                    }
+                }
+            },
+            transition: {
+                type: 'number',
+                integer: true,
+                min: 0,
+                optional: true
+            },
+            from: {
+                type: 'number',
+                min: 0,
+                max: 1,
+                optional: true
+            },
+            to: {
+                type: 'number',
+                min: 0,
+                max: 1,
+                optional: true
+            }
+        }
     }
   ],
   compositeAttributes: {

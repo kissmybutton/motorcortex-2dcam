@@ -155,7 +155,6 @@ export default class Adaptor {
             // the distance that we expect to have covered on the full path 
             const distanceFromZero = secondPartProgress * fractionPathLength + data.startFrom * data.pathLength;
             const point = data.path.getPointAtLength(distanceFromZero); // x, y -> that's where we want to be
-            console.log(progress, point);
             const res = this._xyzoomToTranslate({x: point.x, y: point.y, zoom: scale});
             return {
                 translateX: res.x,
