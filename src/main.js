@@ -15,5 +15,8 @@ export default {
         exportable: PanOnPath,
         name: 'PanOnPath'
     }
-  ]
+  ],
+  compositeAttributes: {
+      position: ['x', 'y', 'zoom', 'path']
+  }
 };

@@ -42,8 +42,6 @@ export default class FocusAlongPath extends ZoomTo{
         const duration = this.props.duration;
         const path = document.createElementNS(xmlns, "path");
         path.setAttributeNS(null, 'd', this.targetValue.path);
-
-        console.log('target value', this.targetValue);
         
         this.data = {
             path,
@@ -66,7 +64,8 @@ export default class FocusAlongPath extends ZoomTo{
     }
 
     onGetContext(){
-        console.log('target value', this.targetValue);
+        this.data.zoom = this.targetValue.zoom;
         this.progressMethod = this.adaptor.createPathProgressFunction(this.data, this.initialValue);
+        console.log(this.progressMethod);
     }
 }

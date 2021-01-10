@@ -49,7 +49,6 @@ export default class MyEffect extends MotorCortex.Effect{
     **/
     onProgress(fraction, millisecond){
         const vals = this.progressMethod(fraction);
-        console.log(vals);
         this.element.style.transform = `translateX(${vals.translateX}px) translateY(${vals.translateY}px) scaleX(${vals.scale}) scaleY(${vals.scale})`;
     }
 }
