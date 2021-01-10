@@ -38,11 +38,11 @@ const xmlns = "http://www.w3.org/2000/svg";
  */
 export default class FocusAlongPath extends ZoomTo{
     onInitialise(){
-        // create a data repository that will hold usefull info of our Incident
         const duration = this.props.duration;
         const path = document.createElementNS(xmlns, "path");
         path.setAttributeNS(null, 'd', this.targetValue.path);
         
+        // create a data repository that will hold usefull info of our Incident
         this.data = {
             path,
             finalPoint: null,
