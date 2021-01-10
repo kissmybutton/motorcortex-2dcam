@@ -4,7 +4,7 @@ const MyPlugin = MotorCortex.loadPlugin(MyPluginDefinition);
 
 import Player from "@kissmybutton/motorcortex-player";
 
-
+const mypath = 'M 1280 150 L 1380 464';
 const clip = new MotorCortex.HTMLClip({
     html: ()=>
         <div class="container">
@@ -60,35 +60,20 @@ const zoomTo2 = new MyPlugin.ZoomTo({
     easing: 'easeInOutSine'
 });
 
-const zoomTo3 = new MyPlugin.ZoomTo({
+const pop1 = new MyPlugin.PanOnPath({
     animatedAttrs: {
         position: {
-            x: 1375,
-            y: 460,
+            path: mypath,
             zoom: 1
         }
     }
 }, {
+    duration: 3000,
     selector: '.img',
-    duration: 3000,
-    easing: 'easeInOutSine'
-});
-
-const pop1 = new MyPlugin.PanOnPath({
-    transition: 1000,
-    animatedAttrs: {
-        position: {
-            path: 'M 232.893 552.922 C -14.921 312.7 959.84 -88.108 1251.138 194.266 C 1929.119 182.67 1554.691 582.533 1351.294 586.012 C 898.989 540.454 1202.984 713.367 1347.306 727.904',
-            zoom: 0.5
-        }
-    }
-}, {
-    duration: 3000,
-    selector: '.img'
+    easing: 'linear'
 })
 
 clip.addIncident(zoomTo1, 0);
 clip.addIncident(zoomTo2, 2000);
-clip.addIncident(zoomTo3, 6000);
-clip.addIncident(pop1, 9000);
+clip.addIncident(pop1, 6000);
 const player = new Player({clip});

@@ -142,14 +142,20 @@ export default class Adaptor {
 
         const transitionFraction = data.transitionDuration/(data.transitionDuration + data.alongPathDuration);
         const alongPathFraction = (data.alongPathDuration/(data.transitionDuration + data.alongPathDuration));
+        // the actual length of the path to move on having taken out the startFrom and endTo parts
+        const fractionPathLength = (data.endTo - data.startFrom) * data.pathLength;
         return (progress) => {
-            console.log(data.transitionDuration, transitionFraction, progress);
-            if(data.transitionDuration > 0 && transitionFraction < progress){
+            if(data.transitionDuration > 0 && progress < transitionFraction){
                 return transitionProgress(progress / transitionFraction);
             }
-            const inPathProgress = (progress - transitionFraction) / alongPathFraction;
-            const scale = (data.zoom - initialValue.zoom) * inPathProgress + initialValue.zoom
-            const point = data.path.getPointAtLength(inPathProgress*data.pathLength); // x, y -> that's where we want to be
+            // the fraction from 0 to 1 of the second part calculated strictly out of the durations
+            const secondPartProgress = (progress - transitionFraction) / alongPathFraction;
+            // calculate the scale of the point
+            const scale = (data.zoom - initialValue.zoom) * secondPartProgress + initialValue.zoom;
+            // the distance that we expect to have covered on the full path 
+            const distanceFromZero = secondPartProgress * fractionPathLength + data.startFrom * data.pathLength;
+            const point = data.path.getPointAtLength(distanceFromZero); // x, y -> that's where we want to be
+            console.log(progress, point);
             const res = this._xyzoomToTranslate({x: point.x, y: point.y, zoom: scale});
             return {
                 translateX: res.x,

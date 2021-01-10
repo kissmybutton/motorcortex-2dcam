@@ -66,6 +66,5 @@ export default class FocusAlongPath extends ZoomTo{
     onGetContext(){
         this.data.zoom = this.targetValue.zoom;
         this.progressMethod = this.adaptor.createPathProgressFunction(this.data, this.initialValue);
-        console.log(this.progressMethod);
     }
 }
