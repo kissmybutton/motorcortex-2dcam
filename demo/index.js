@@ -70,7 +70,7 @@ const pop1 = new MyPlugin.PanOnPath({
 }, {
     duration: 3000,
     selector: '.img',
-    easing: 'linear'
+    easing: 'easeOutCubic'
 })
 
 clip.addIncident(zoomTo1, 0);
