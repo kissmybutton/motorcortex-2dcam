@@ -1,5 +1,5 @@
 {
-  "name": "motorcortex-2dcam",
+  "name": "@kissmybutton/motorcortex-2dcam",
   "version": "0.0.1",
   "description": "zoom and pan to any element like you handle a 2d camera",
   "main": "dist/bundle.cjs.js",
@@ -8,7 +8,7 @@
   "author": "KissMyButton PC (kissmybutton.gr) <opensource@kissmybutton.gr>",
   "repository": {
     "type": "git",
-    "url": "Your git repo here"
+    "url": "https://github.com/kissmybutton/motorcortex-2dcam"
   },
   "license": "MIT",
   "engines": {
