@@ -4,6 +4,8 @@ any given point of any element.
 You can move your camera around, zoom and unzoom, follow paths, all
 via its easy to use Incidents.
 
+(Demo)[https://kissmybutton.github.io/motorcortex-2dcam/demo/]
+
 ## Installation
 
 ```bash
