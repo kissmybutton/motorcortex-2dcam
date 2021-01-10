@@ -1,5 +1,5 @@
 import ZoomTo from "./Incidents/ZoomTo";
-import PanOnPath from "./Incidents/PanOnPath";
+import FollowPath from "./Incidents/FollowPath";
 
 export default {
   npm_name: "motorcortex-2dcam",
@@ -36,8 +36,8 @@ export default {
         }
     },
     {
-        exportable: PanOnPath,
-        name: 'PanOnPath',
+        exportable: FollowPath,
+        name: 'FollowPath',
         attributesValidationRules: {
             animatedAttrs: {
                 type: 'object',

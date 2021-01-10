@@ -36,7 +36,7 @@ const xmlns = "http://www.w3.org/2000/svg";
  * path or to end on a specific portion of it (again 0 to 1). These two attributes are
  * optional too with default values from:0 and to:1.
  */
-export default class FocusAlongPath extends ZoomTo{
+export default class FollowPath extends ZoomTo{
     onInitialise(){
         const duration = this.props.duration;
         const path = document.createElementNS(xmlns, "path");

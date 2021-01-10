@@ -60,7 +60,7 @@ const zoomTo2 = new MyPlugin.ZoomTo({
     easing: 'easeInOutSine'
 });
 
-const pop1 = new MyPlugin.PanOnPath({
+const pop1 = new MyPlugin.FollowPath({
     animatedAttrs: {
         position: {
             path: mypath,
