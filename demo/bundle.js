@@ -39,6 +39,7 @@ var n=a.default,r=!1,o=gC,s="locals",u=["delimiter","scope","context","debug","c
 
 var MyPlugin = _kissmybutton_motorcortex__WEBPACK_IMPORTED_MODULE_0___default().loadPlugin((_dist_bundle_umd__WEBPACK_IMPORTED_MODULE_1___default()));
 
+var mypath = 'M 1280 150 L 1380 464';
 var clip = new (_kissmybutton_motorcortex__WEBPACK_IMPORTED_MODULE_0___default().HTMLClip)({
   html: function html() {
     return _kissmybutton_motorcortex__WEBPACK_IMPORTED_MODULE_0___default().utils.createDOMElement("div", {
@@ -55,64 +56,7 @@ var clip = new (_kissmybutton_motorcortex__WEBPACK_IMPORTED_MODULE_0___default()
     width: '640px',
     height: '360px'
   }
-}); // const zoomTo1 = new MyPlugin.ZoomTo({
-//     dims: {
-//         width: 1920,
-//         height: 1080
-//     },
-//     viewport: {
-//         width: 640,
-//         height: 360
-//     },
-//     center: {
-//         x: 700,
-//         y: 342
-//     },
-//     zoom: 0.7,
-//     duration: 2000,
-//     easing: 'easeOutSine'
-// }, {
-//     selector: '.img'
-// });
-// const zoomTo2 = new MyPlugin.ZoomTo({
-//     dims: {
-//         width: 1920,
-//         height: 1080
-//     },
-//     viewport: {
-//         width: 640,
-//         height: 360
-//     },
-//     center: {
-//         x: 1280,
-//         y: 150
-//     },
-//     zoom: 1.2,
-//     duration: 4000,
-//     easing: 'easeInOutSine'
-// }, {
-//     selector: '.img'
-// });
-// const zoomTo3 = new MyPlugin.ZoomTo({
-//     dims: {
-//         width: 1920,
-//         height: 1080
-//     },
-//     viewport: {
-//         width: 640,
-//         height: 360
-//     },
-//     center: {
-//         x: 1375,
-//         y: 460
-//     },
-//     zoom: 1,
-//     duration: 3000,
-//     easing: 'easeInOutSine'
-// }, {
-//     selector: '.img'
-// });
-
+});
 var zoomTo1 = new MyPlugin.ZoomTo({
   animatedAttrs: {
     position: {
@@ -139,23 +83,21 @@ var zoomTo2 = new MyPlugin.ZoomTo({
   duration: 4000,
   easing: 'easeInOutSine'
 });
-var zoomTo3 = new MyPlugin.ZoomTo({
+var pop1 = new MyPlugin.FollowPath({
   animatedAttrs: {
     position: {
-      x: 1375,
-      y: 460,
+      path: mypath,
       zoom: 1
     }
   }
 }, {
-  selector: '.img',
   duration: 3000,
-  easing: 'easeInOutSine'
+  selector: '.img',
+  easing: 'easeOutCubic'
 });
 clip.addIncident(zoomTo1, 0);
 clip.addIncident(zoomTo2, 2000);
-clip.addIncident(zoomTo3, 6000);
-console.log(clip);
+clip.addIncident(pop1, 6000);
 var player = new (_kissmybutton_motorcortex_player__WEBPACK_IMPORTED_MODULE_2___default())({
   clip: clip
 });
@@ -181,78 +123,89 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     };
   }
 
-  var r = e(t);
+  var n = e(t);
 
-  function n(t, e) {
+  function o(t, e) {
     if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
   }
 
-  function o(t, e) {
-    for (var r = 0; r < e.length; r++) {
-      var n = e[r];
-      n.enumerable = n.enumerable || !1, n.configurable = !0, "value" in n && (n.writable = !0), Object.defineProperty(t, n.key, n);
+  function r(t, e) {
+    for (var n = 0; n < e.length; n++) {
+      var o = e[n];
+      o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(t, o.key, o);
     }
   }
 
-  function a(t, e, r) {
-    return e && o(t.prototype, e), r && o(t, r), t;
+  function a(t, e, n) {
+    return e && r(t.prototype, e), n && r(t, n), t;
   }
 
-  function i(t, e, r) {
+  function i(t, e, n) {
     return e in t ? Object.defineProperty(t, e, {
-      value: r,
+      value: n,
       enumerable: !0,
       configurable: !0,
       writable: !0
-    }) : t[e] = r, t;
+    }) : t[e] = n, t;
   }
 
-  function c(t, e) {
-    var r = Object.keys(t);
+  function s(t, e) {
+    var n = Object.keys(t);
 
     if (Object.getOwnPropertySymbols) {
-      var n = Object.getOwnPropertySymbols(t);
-      e && (n = n.filter(function (e) {
+      var o = Object.getOwnPropertySymbols(t);
+      e && (o = o.filter(function (e) {
         return Object.getOwnPropertyDescriptor(t, e).enumerable;
-      })), r.push.apply(r, n);
+      })), n.push.apply(n, o);
     }
 
-    return r;
+    return n;
   }
 
-  function s(t) {
+  function u(t) {
     for (var e = 1; e < arguments.length; e++) {
-      var r = null != arguments[e] ? arguments[e] : {};
-      e % 2 ? c(Object(r), !0).forEach(function (e) {
-        i(t, e, r[e]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(r)) : c(Object(r)).forEach(function (e) {
-        Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(r, e));
+      var n = null != arguments[e] ? arguments[e] : {};
+      e % 2 ? s(Object(n), !0).forEach(function (e) {
+        i(t, e, n[e]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : s(Object(n)).forEach(function (e) {
+        Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(n, e));
       });
     }
 
     return t;
   }
 
-  function u(t) {
-    return (u = Object.setPrototypeOf ? Object.getPrototypeOf : function (t) {
+  function l(t, e) {
+    if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
+    t.prototype = Object.create(e && e.prototype, {
+      constructor: {
+        value: t,
+        writable: !0,
+        configurable: !0
+      }
+    }), e && p(t, e);
+  }
+
+  function c(t) {
+    return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function (t) {
       return t.__proto__ || Object.getPrototypeOf(t);
     })(t);
   }
 
-  function l(t, e) {
-    return (l = Object.setPrototypeOf || function (t, e) {
+  function p(t, e) {
+    return (p = Object.setPrototypeOf || function (t, e) {
       return t.__proto__ = e, t;
     })(t, e);
   }
 
-  function f(t, e) {
+  function h(t, e) {
     return !e || "object" != _typeof(e) && "function" != typeof e ? function (t) {
       if (void 0 === t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
       return t;
     }(t) : e;
   }
 
-  function p(t) {
+  function f(t) {
     var e = function () {
       if ("undefined" == typeof Reflect || !Reflect.construct) return !1;
       if (Reflect.construct.sham) return !1;
@@ -266,21 +219,21 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     }();
 
     return function () {
-      var r,
-          n = u(t);
+      var n,
+          o = c(t);
 
       if (e) {
-        var o = u(this).constructor;
-        r = Reflect.construct(n, arguments, o);
-      } else r = n.apply(this, arguments);
+        var r = c(this).constructor;
+        n = Reflect.construct(o, arguments, r);
+      } else n = o.apply(this, arguments);
 
-      return f(this, r);
+      return h(this, n);
     };
   }
 
-  var h = function () {
+  var y = function () {
     function t(e) {
-      n(this, t), this.el = e, this.matrix = this._getMatrix(e), this.viewportCenter = this._getViewPortCenter(), this.idlePosition = this._getIdlePosition();
+      o(this, t), this.el = e, this.matrix = this._getMatrix(e), this.viewportCenter = this._getViewPortCenter(), this.idlePosition = this._getIdlePosition();
     }
 
     return a(t, [{
@@ -289,23 +242,23 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         return function (t) {
           var e = window.getComputedStyle(t).transform;
           if ("" === e || "none" === e) return {};
-          var r,
-              n,
+          var n,
               o,
+              r,
               a,
               i,
-              c,
               s,
               u,
-              l = e.split("(")[1].split(")")[0].split(",");
-          return r = l, n = Math.atan2(r[1], r[0]), o = Math.pow(r[0], 2) + Math.pow(r[1], 2), a = Math.pow(r[2], 2) + Math.pow(r[3], 2), i = Math.sqrt(o), c = (r[0] * r[3] - r[2] * r[1]) / i, s = Math.atan2(r[0] * r[2] + r[1] * r[3], o), u = Math.atan2(r[1] * r[3] + r[0] * r[2], a), {
-            rotate: n / (Math.PI / 180) + "deg",
+              l,
+              c = e.split("(")[1].split(")")[0].split(",");
+          return n = c, o = Math.atan2(n[1], n[0]), r = Math.pow(n[0], 2) + Math.pow(n[1], 2), a = Math.pow(n[2], 2) + Math.pow(n[3], 2), i = Math.sqrt(r), s = (n[0] * n[3] - n[2] * n[1]) / i, u = Math.atan2(n[0] * n[2] + n[1] * n[3], r), l = Math.atan2(n[1] * n[3] + n[0] * n[2], a), {
+            rotate: o / (Math.PI / 180) + "deg",
             scaleX: i,
-            scaleY: c,
-            skewX: (1 === o ? s / (Math.PI / 180) : 0) + "deg",
-            skewY: (1 === a ? u / (Math.PI / 180) : 0) + "deg",
-            translateX: r[4] + "px",
-            translateY: r[5] + "px"
+            scaleY: s,
+            skewX: (1 === r ? u / (Math.PI / 180) : 0) + "deg",
+            skewY: (1 === a ? l / (Math.PI / 180) : 0) + "deg",
+            translateX: n[4] + "px",
+            translateY: n[5] + "px"
           };
         }(t);
       }
@@ -323,10 +276,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       value: function value() {
         var t = this.el,
             e = t.getBoundingClientRect(),
-            r = t.parentNode.getBoundingClientRect();
+            n = t.parentNode.getBoundingClientRect();
         return {
-          x: e.left - r.left,
-          y: e.top - r.top
+          x: e.left - n.left,
+          y: e.top - n.top
         };
       }
     }, {
@@ -334,12 +287,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       value: function value() {
         var t = this.matrix,
             e = this.idlePosition,
-            r = this.viewportCenter,
-            n = r.x - e.x,
-            o = r.y - e.y;
-        return s(s({}, {
-          x: n / t.scaleX,
-          y: o / t.scaleY
+            n = this.viewportCenter,
+            o = n.x - e.x,
+            r = n.y - e.y;
+        return u(u({}, {
+          x: o / t.scaleX,
+          y: r / t.scaleY
         }), {}, {
           zoom: t.scaleX
         });
@@ -347,20 +300,19 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     }, {
       key: "createProgressFunction",
       value: function value(t) {
-        console.log("in createProgressFunction");
-
         var e = this._xyzoomToTranslate(t.start),
-            r = this._xyzoomToTranslate(t.target);
+            n = this._xyzoomToTranslate(t.target),
+            o = Math.atan(Math.abs(n.y - e.y) / Math.abs(n.x - e.x)),
+            r = Math.sqrt(Math.pow(n.y - e.y, 2) + Math.pow(n.x - e.x, 2)),
+            a = 1,
+            i = 1;
 
-        console.log("start and end", e, r);
-        var n = Math.sqrt(Math.pow(r.y - e.y, 2) + Math.pow(r.x - e.x, 2)),
-            o = Math.atan(r.y - e.y / r.x - e.x);
-        return function (t) {
-          var a = t * n;
+        return n.x < e.x && (a = -1), n.y < e.y && (i = -1), function (t) {
+          var s = t * r;
           return {
-            translateX: a * Math.cos(o) - e.x,
-            translateY: a * Math.sin(o) - e.y,
-            scale: (r.scale - e.scale) * t + e.scale
+            translateX: a * s * Math.cos(o) + e.x,
+            translateY: i * s * Math.sin(o) + e.y,
+            scale: (n.scale - e.scale) * t + e.scale
           };
         };
       }
@@ -368,66 +320,202 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       key: "_xyzoomToTranslate",
       value: function value(t) {
         var e = t.zoom * t.x,
-            r = t.zoom * t.y,
-            n = this.viewportCenter.x - e,
-            o = this.viewportCenter.y - r;
+            n = t.zoom * t.y,
+            o = this.viewportCenter.x - e,
+            r = this.viewportCenter.y - n;
         return {
-          x: n - this.idlePosition.x,
-          y: o - this.idlePosition.y,
+          x: o - this.idlePosition.x,
+          y: r - this.idlePosition.y,
           scale: t.zoom
         };
       }
+    }, {
+      key: "createPathProgressFunction",
+      value: function value(t, e) {
+        var n = this,
+            o = function o(t) {};
+
+        t.transitionDuration > 0 && (o = this.createProgressFunction({
+          start: e,
+          target: {
+            x: t.startPoint.x,
+            y: t.startPoint.y,
+            zoom: e.zoom
+          }
+        }));
+        var r = t.transitionDuration / (t.transitionDuration + t.alongPathDuration),
+            a = t.alongPathDuration / (t.transitionDuration + t.alongPathDuration),
+            i = (t.endTo - t.startFrom) * t.pathLength;
+        return function (s) {
+          if (t.transitionDuration > 0 && s < r) return o(s / r);
+
+          var u = (s - r) / a,
+              l = (t.zoom - e.zoom) * u + e.zoom,
+              c = u * i + t.startFrom * t.pathLength,
+              p = t.path.getPointAtLength(c),
+              h = n._xyzoomToTranslate({
+            x: p.x,
+            y: p.y,
+            zoom: l
+          });
+
+          return {
+            translateX: h.x,
+            translateY: h.y,
+            scale: h.scale
+          };
+        };
+      }
     }]), t;
-  }();
+  }(),
+      m = function (t) {
+    l(n, t);
+    var e = f(n);
+
+    function n() {
+      return o(this, n), e.apply(this, arguments);
+    }
+
+    return a(n, [{
+      key: "getScratchValue",
+      value: function value() {
+        return this.adaptor.calcXYZoom();
+      }
+    }, {
+      key: "onGetContext",
+      value: function value() {
+        this.progressMethod = this.adaptor.createProgressFunction({
+          start: this.initialValue,
+          target: this.targetValue
+        });
+      }
+    }, {
+      key: "onProgress",
+      value: function value(t, e) {
+        var n = this.progressMethod(t);
+        this.element.style.transform = "translateX(".concat(n.translateX, "px) translateY(").concat(n.translateY, "px) scaleX(").concat(n.scale, ") scaleY(").concat(n.scale, ")");
+      }
+    }, {
+      key: "adaptor",
+      get: function get() {
+        return this._adaptor || (this._adaptor = new y(this.element)), this._adaptor;
+      }
+    }]), n;
+  }(n.default.Effect);
 
   return {
     npm_name: "motorcortex-2dcam",
     incidents: [{
-      exportable: function (t) {
-        !function (t, e) {
-          if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
-          t.prototype = Object.create(e && e.prototype, {
-            constructor: {
-              value: t,
-              writable: !0,
-              configurable: !0
+      exportable: m,
+      name: "ZoomTo",
+      attributesValidationRules: {
+        animatedAttrs: {
+          type: "object",
+          props: {
+            position: {
+              type: "object",
+              props: {
+                x: {
+                  type: "number",
+                  optional: !0,
+                  min: 0
+                },
+                y: {
+                  type: "number",
+                  optional: !0,
+                  min: 0
+                },
+                zoom: {
+                  type: "number",
+                  optional: !0,
+                  min: 0
+                }
+              }
             }
-          }), e && l(t, e);
-        }(r, t);
-        var e = p(r);
+          }
+        }
+      }
+    }, {
+      exportable: function (t) {
+        l(n, t);
+        var e = f(n);
 
-        function r() {
-          return n(this, r), e.apply(this, arguments);
+        function n() {
+          return o(this, n), e.apply(this, arguments);
         }
 
-        return a(r, [{
-          key: "getScratchValue",
+        return a(n, [{
+          key: "onInitialise",
           value: function value() {
-            return this.adaptor.calcXYZoom();
+            var t = this.props.duration,
+                e = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            e.setAttributeNS(null, "d", this.targetValue.path), this.data = {
+              path: e,
+              finalPoint: null,
+              startPoint: null,
+              zoom: this.targetValue.zoom,
+              pathLength: e.getTotalLength(),
+              startFrom: this.attrs.from ? this.attrs.from : 0,
+              endTo: this.attrs.to ? this.attrs.to : 1,
+              transitionDuration: this.attrs.transition ? this.attrs.transition : 0,
+
+              get alongPathDuration() {
+                return t - this.transitionDuration;
+              }
+
+            }, this.data.finalPoint = e.getPointAtLength(this.data.endTo * this.data.pathLength), this.data.startPoint = e.getPointAtLength(this.data.startFrom * this.data.pathLength), this.targetValue.x = this.data.finalPoint.x, this.targetValue.y = this.data.finalPoint.y;
           }
         }, {
           key: "onGetContext",
           value: function value() {
-            this.progressMethod = this.adaptor.createProgressFunction({
-              start: this.initialValue,
-              target: this.targetValue
-            });
+            this.data.zoom = this.targetValue.zoom, this.progressMethod = this.adaptor.createPathProgressFunction(this.data, this.initialValue);
           }
-        }, {
-          key: "onProgress",
-          value: function value(t, e) {
-            var r = this.progressMethod(t);
-            console.log(r), this.element.style.transform = "translateX(".concat(r.translateX, "px) translateY(").concat(r.translateY, "px) scaleX(").concat(r.scale, ") scaleY(").concat(r.scale, ")");
+        }]), n;
+      }(m),
+      name: "FollowPath",
+      attributesValidationRules: {
+        animatedAttrs: {
+          type: "object",
+          props: {
+            position: {
+              type: "object",
+              props: {
+                path: {
+                  type: "string",
+                  optional: !1
+                },
+                zoom: {
+                  type: "number",
+                  optional: !0,
+                  min: 0
+                }
+              }
+            }
           }
-        }, {
-          key: "adaptor",
-          get: function get() {
-            return this._adaptor || (this._adaptor = new h(this.element)), this._adaptor;
-          }
-        }]), r;
-      }(r.default.Effect),
-      name: "ZoomTo"
-    }]
+        },
+        transition: {
+          type: "number",
+          integer: !0,
+          min: 0,
+          optional: !0
+        },
+        from: {
+          type: "number",
+          min: 0,
+          max: 1,
+          optional: !0
+        },
+        to: {
+          type: "number",
+          min: 0,
+          max: 1,
+          optional: !0
+        }
+      }
+    }],
+    compositeAttributes: {
+      position: ["x", "y", "zoom", "path"]
+    }
   };
 });
 
@@ -525,7 +613,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "d5d046a10e227ae10da9"
+/******/ 		__webpack_require__.h = () => "b02a36d8ac5fc89af2e3"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
