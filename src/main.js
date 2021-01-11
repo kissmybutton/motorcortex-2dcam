@@ -2,7 +2,7 @@ import ZoomTo from "./Incidents/ZoomTo";
 import FollowPath from "./Incidents/FollowPath";
 
 export default {
-  npm_name: "motorcortex-2dcam",
+  npm_name: "@kissmybutton/motorcortex-2dcam",
   incidents: [
     {
         exportable: ZoomTo,
