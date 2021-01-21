@@ -4,6 +4,25 @@ const MyPlugin = MotorCortex.loadPlugin(MyPluginDefinition);
 
 import Player from "@kissmybutton/motorcortex-player";
 
+const rootClip = new MotorCortex.HTMLClip({
+    html: ()=>
+        <div class="container">
+            <div class="casi-container"></div>
+        </div>,
+    css: `
+        .container, .casi-container{
+            width: 640px;
+            height: 360px;
+            background: black;
+        }
+    `,
+    host: document.getElementById('clip'),
+    containerParams: {
+        width: '640px',
+        height: '360px'
+    }
+});
+
 const mypath = 'M 1280 150 L 1380 464';
 const clip = new MotorCortex.HTMLClip({
     html: ()=>
@@ -25,12 +44,14 @@ const clip = new MotorCortex.HTMLClip({
             transform-origin: top left;
         }
     `,
-    host: document.getElementById('clip'),
+    selector: '.casi-container',
     containerParams: {
         width: '640px',
         height: '360px'
     }
 });
+
+rootClip.addIncident(clip, 0);
 
 const zoomTo1 = new MyPlugin.ZoomTo({
     animatedAttrs: {
@@ -76,4 +97,4 @@ const pop1 = new MyPlugin.FollowPath({
 clip.addIncident(zoomTo1, 0);
 clip.addIncident(zoomTo2, 2000);
 clip.addIncident(pop1, 6000);
-const player = new Player({clip});
+const player = new Player({clip: rootClip});
