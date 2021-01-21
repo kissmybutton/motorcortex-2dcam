@@ -15,13 +15,6 @@ import Adaptor from '../utils/Adaptor';
  *
  **/
 export default class MyEffect extends MotorCortex.Effect{
-    get adaptor(){
-        if(!this._adaptor){
-            this._adaptor = new Adaptor(this.element);
-        }
-        return this._adaptor;
-    }
-
     /**
     * the scratch value of the Incident should return back the triplette 
     * x, y, zoom
@@ -31,6 +24,7 @@ export default class MyEffect extends MotorCortex.Effect{
     * scaleX value of our element
     **/
     getScratchValue(){
+        this.adaptor = new Adaptor(this.element);
         return this.adaptor.calcXYZoom();
     }
     
@@ -38,6 +32,7 @@ export default class MyEffect extends MotorCortex.Effect{
      * 
     **/
     onGetContext(){
+        this.adaptor = new Adaptor(this.element);
         this.progressMethod = this.adaptor.createProgressFunction({
             start: this.initialValue,
             target: this.targetValue

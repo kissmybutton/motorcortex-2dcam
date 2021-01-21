@@ -1,5 +1,7 @@
 import ZoomTo from './ZoomTo';
 const xmlns = "http://www.w3.org/2000/svg";
+import Adaptor from '../utils/Adaptor';
+
 
 /**
  * The attrs that this Incident expect are almost identical with its "brother's"
@@ -64,6 +66,7 @@ export default class FollowPath extends ZoomTo{
     }
 
     onGetContext(){
+        this.adaptor = new Adaptor(this.element);
         this.data.zoom = this.targetValue.zoom;
         this.progressMethod = this.adaptor.createPathProgressFunction(this.data, this.initialValue);
     }

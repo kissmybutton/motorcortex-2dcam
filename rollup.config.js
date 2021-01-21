@@ -12,7 +12,12 @@ export default [
       { file: pkg.main, format: "cjs", name: "bundle" },
       { file: pkg.module, format: "es", name: "bundle" },
     ],
-    plugins: [resolve(), babel(), commonjs(), terser()],
+    plugins: [
+        resolve(), 
+        babel(), 
+        commonjs(), 
+        // terser()
+    ],
   },
   {
     input: "src/main.js",
@@ -31,7 +36,7 @@ export default [
       resolve({ mainFields: ["module", "main", "browser"] }),
       babel(),
       commonjs(),
-      terser()
+    //   terser()
     ]
   }
 ];
