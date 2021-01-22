@@ -16,7 +16,7 @@ export default [
         resolve(), 
         babel(), 
         commonjs(), 
-        // terser()
+        terser()
     ],
   },
   {
@@ -36,7 +36,7 @@ export default [
       resolve({ mainFields: ["module", "main", "browser"] }),
       babel(),
       commonjs(),
-    //   terser()
+      terser()
     ]
   }
 ];

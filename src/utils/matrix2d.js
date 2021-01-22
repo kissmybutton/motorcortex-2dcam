@@ -5,7 +5,15 @@ function getMatrix2D(element) {
     const transform = win.getComputedStyle(element).transform;
 
     if (transform === "" || transform === "none") {
-        return {};
+        return {
+            rotate: '0deg',
+            scaleX: 1,
+            scaleY: 1,
+            skewX: '0deg',
+            skewY: '0deg',
+            translateX: '0px',
+            translateY: '0px'
+        };
     }
 
     const values = transform.split("(")[1].split(")")[0].split(",");

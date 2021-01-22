@@ -125,581 +125,328 @@ var player = new (_kissmybutton_motorcortex_player__WEBPACK_IMPORTED_MODULE_2___
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-(function (global, factory) {
-  ( false ? 0 : _typeof(exports)) === 'object' && "object" !== 'undefined' ? module.exports = factory(__webpack_require__(444)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(444)], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+!function (t, e) {
+  "object" == ( false ? 0 : _typeof(exports)) && "undefined" != "object" ? module.exports = e(__webpack_require__(444)) :  true ? !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(444)], __WEBPACK_AMD_DEFINE_FACTORY__ = (e),
 		__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
 		(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
-		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : (0);
-})(this, function (MotorCortex) {
-  'use strict';
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__)) : 0;
+}(this, function (t) {
+  "use strict";
 
-  function _interopDefaultLegacy(e) {
-    return e && _typeof(e) === 'object' && 'default' in e ? e : {
-      'default': e
+  function e(t) {
+    return t && "object" == _typeof(t) && "default" in t ? t : {
+      default: t
     };
   }
 
-  var MotorCortex__default = /*#__PURE__*/_interopDefaultLegacy(MotorCortex);
+  var n = e(t);
 
-  function _classCallCheck(instance, Constructor) {
-    if (!(instance instanceof Constructor)) {
-      throw new TypeError("Cannot call a class as a function");
+  function o(t, e) {
+    if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
+  }
+
+  function r(t, e) {
+    for (var n = 0; n < e.length; n++) {
+      var o = e[n];
+      o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(t, o.key, o);
     }
   }
 
-  function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
-      descriptor.enumerable = descriptor.enumerable || false;
-      descriptor.configurable = true;
-      if ("value" in descriptor) descriptor.writable = true;
-      Object.defineProperty(target, descriptor.key, descriptor);
-    }
+  function a(t, e, n) {
+    return e && r(t.prototype, e), n && r(t, n), t;
   }
 
-  function _createClass(Constructor, protoProps, staticProps) {
-    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
-    if (staticProps) _defineProperties(Constructor, staticProps);
-    return Constructor;
+  function i(t, e, n) {
+    return e in t ? Object.defineProperty(t, e, {
+      value: n,
+      enumerable: !0,
+      configurable: !0,
+      writable: !0
+    }) : t[e] = n, t;
   }
 
-  function _defineProperty(obj, key, value) {
-    if (key in obj) {
-      Object.defineProperty(obj, key, {
-        value: value,
-        enumerable: true,
-        configurable: true,
-        writable: true
-      });
-    } else {
-      obj[key] = value;
-    }
-
-    return obj;
-  }
-
-  function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
+  function s(t, e) {
+    var n = Object.keys(t);
 
     if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
-      if (enumerableOnly) symbols = symbols.filter(function (sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+      var o = Object.getOwnPropertySymbols(t);
+      e && (o = o.filter(function (e) {
+        return Object.getOwnPropertyDescriptor(t, e).enumerable;
+      })), n.push.apply(n, o);
+    }
+
+    return n;
+  }
+
+  function u(t) {
+    for (var e = 1; e < arguments.length; e++) {
+      var n = null != arguments[e] ? arguments[e] : {};
+      e % 2 ? s(Object(n), !0).forEach(function (e) {
+        i(t, e, n[e]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : s(Object(n)).forEach(function (e) {
+        Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(n, e));
       });
-      keys.push.apply(keys, symbols);
     }
 
-    return keys;
+    return t;
   }
 
-  function _objectSpread2(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
-
-      if (i % 2) {
-        ownKeys(Object(source), true).forEach(function (key) {
-          _defineProperty(target, key, source[key]);
-        });
-      } else if (Object.getOwnPropertyDescriptors) {
-        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-      } else {
-        ownKeys(Object(source)).forEach(function (key) {
-          Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-        });
-      }
-    }
-
-    return target;
-  }
-
-  function _inherits(subClass, superClass) {
-    if (typeof superClass !== "function" && superClass !== null) {
-      throw new TypeError("Super expression must either be null or a function");
-    }
-
-    subClass.prototype = Object.create(superClass && superClass.prototype, {
+  function l(t, e) {
+    if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function");
+    t.prototype = Object.create(e && e.prototype, {
       constructor: {
-        value: subClass,
-        writable: true,
-        configurable: true
+        value: t,
+        writable: !0,
+        configurable: !0
       }
-    });
-    if (superClass) _setPrototypeOf(subClass, superClass);
+    }), e && p(t, e);
   }
 
-  function _getPrototypeOf(o) {
-    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
-      return o.__proto__ || Object.getPrototypeOf(o);
-    };
-    return _getPrototypeOf(o);
+  function c(t) {
+    return (c = Object.setPrototypeOf ? Object.getPrototypeOf : function (t) {
+      return t.__proto__ || Object.getPrototypeOf(t);
+    })(t);
   }
 
-  function _setPrototypeOf(o, p) {
-    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
-      o.__proto__ = p;
-      return o;
-    };
-
-    return _setPrototypeOf(o, p);
+  function p(t, e) {
+    return (p = Object.setPrototypeOf || function (t, e) {
+      return t.__proto__ = e, t;
+    })(t, e);
   }
 
-  function _isNativeReflectConstruct() {
-    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
-    if (Reflect.construct.sham) return false;
-    if (typeof Proxy === "function") return true;
-
-    try {
-      Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
-      return true;
-    } catch (e) {
-      return false;
-    }
+  function h(t, e) {
+    return !e || "object" != _typeof(e) && "function" != typeof e ? function (t) {
+      if (void 0 === t) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+      return t;
+    }(t) : e;
   }
 
-  function _assertThisInitialized(self) {
-    if (self === void 0) {
-      throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
-    }
+  function f(t) {
+    var e = function () {
+      if ("undefined" == typeof Reflect || !Reflect.construct) return !1;
+      if (Reflect.construct.sham) return !1;
+      if ("function" == typeof Proxy) return !0;
 
-    return self;
-  }
-
-  function _possibleConstructorReturn(self, call) {
-    if (call && (_typeof(call) === "object" || typeof call === "function")) {
-      return call;
-    }
-
-    return _assertThisInitialized(self);
-  }
-
-  function _createSuper(Derived) {
-    var hasNativeReflectConstruct = _isNativeReflectConstruct();
-
-    return function _createSuperInternal() {
-      var Super = _getPrototypeOf(Derived),
-          result;
-
-      if (hasNativeReflectConstruct) {
-        var NewTarget = _getPrototypeOf(this).constructor;
-
-        result = Reflect.construct(Super, arguments, NewTarget);
-      } else {
-        result = Super.apply(this, arguments);
+      try {
+        return Date.prototype.toString.call(Reflect.construct(Date, [], function () {})), !0;
+      } catch (t) {
+        return !1;
       }
+    }();
 
-      return _possibleConstructorReturn(this, result);
+    return function () {
+      var n,
+          o = c(t);
+
+      if (e) {
+        var r = c(this).constructor;
+        n = Reflect.construct(o, arguments, r);
+      } else n = o.apply(this, arguments);
+
+      return h(this, n);
     };
   }
 
-  function getMatrix2D(element) {
-    var win = window;
-    var transform = win.getComputedStyle(element).transform;
-
-    if (transform === "" || transform === "none") {
-      return {};
+  var y = function () {
+    function t(e) {
+      o(this, t), this.el = e, this.matrix = this._getMatrix(e), this.viewportCenter = this._getViewPortCenter(), this.idlePosition = this._getIdlePosition();
     }
 
-    var values = transform.split("(")[1].split(")")[0].split(",");
-
-    var qrDecompone = function qrDecompone(a) {
-      var angle = Math.atan2(a[1], a[0]),
-          denom = Math.pow(a[0], 2) + Math.pow(a[1], 2),
-          denom2 = Math.pow(a[2], 2) + Math.pow(a[3], 2),
-          scaleX = Math.sqrt(denom),
-          scaleY = (a[0] * a[3] - a[2] * a[1]) / scaleX,
-          skewX = Math.atan2(a[0] * a[2] + a[1] * a[3], denom),
-          skewY = Math.atan2(a[1] * a[3] + a[0] * a[2], denom2);
-      return {
-        rotate: angle / (Math.PI / 180) + "deg",
-        // this is rotation angle in degrees
-        scaleX: scaleX,
-        // scaleX factor
-        scaleY: scaleY,
-        // scaleY factor
-        skewX: (denom === 1 ? skewX / (Math.PI / 180) : 0) + "deg",
-        // skewX angle degrees
-        skewY: (denom2 === 1 ? skewY / (Math.PI / 180) : 0) + "deg",
-        // skewY angle degrees
-        translateX: a[4] + "px",
-        // translation point  x
-        translateY: a[5] + "px" // translation point  y
-
-      };
-    };
-
-    return qrDecompone(values);
-  }
-
-  var Adaptor = /*#__PURE__*/function () {
-    function Adaptor(el) {
-      _classCallCheck(this, Adaptor);
-
-      this.el = el;
-      this.matrix = this._getMatrix(el);
-      this.viewportCenter = this._getViewPortCenter();
-      this.idlePosition = this._getIdlePosition();
-    }
-
-    _createClass(Adaptor, [{
+    return a(t, [{
       key: "_getMatrix",
-      value: function _getMatrix(el) {
-        return getMatrix2D(el);
+      value: function value(t) {
+        return function (t) {
+          var e = window.getComputedStyle(t).transform;
+          if ("" === e || "none" === e) return {
+            rotate: "0deg",
+            scaleX: 1,
+            scaleY: 1,
+            skewX: "0deg",
+            skewY: "0deg",
+            translateX: "0px",
+            translateY: "0px"
+          };
+          var n,
+              o,
+              r,
+              a,
+              i,
+              s,
+              u,
+              l,
+              c = e.split("(")[1].split(")")[0].split(",");
+          return n = c, o = Math.atan2(n[1], n[0]), r = Math.pow(n[0], 2) + Math.pow(n[1], 2), a = Math.pow(n[2], 2) + Math.pow(n[3], 2), i = Math.sqrt(r), s = (n[0] * n[3] - n[2] * n[1]) / i, u = Math.atan2(n[0] * n[2] + n[1] * n[3], r), l = Math.atan2(n[1] * n[3] + n[0] * n[2], a), {
+            rotate: o / (Math.PI / 180) + "deg",
+            scaleX: i,
+            scaleY: s,
+            skewX: (1 === r ? u / (Math.PI / 180) : 0) + "deg",
+            skewY: (1 === a ? l / (Math.PI / 180) : 0) + "deg",
+            translateX: n[4] + "px",
+            translateY: n[5] + "px"
+          };
+        }(t);
       }
     }, {
       key: "_getViewPortCenter",
-      value: function _getViewPortCenter() {
-        var el = this.el;
-        var parentNode = el.parentNode;
-        var viewportDims = {
-          width: parseFloat(getComputedStyle(parentNode, null).width.replace("px", "")),
-          height: parseFloat(getComputedStyle(parentNode, null).height.replace("px", ""))
-        };
+      value: function value() {
+        var t = this.el.parentNode;
         return {
-          x: viewportDims.width / 2,
-          y: viewportDims.height / 2
+          x: parseFloat(getComputedStyle(t, null).width.replace("px", "")) / 2,
+          y: parseFloat(getComputedStyle(t, null).height.replace("px", "")) / 2
         };
       }
-      /**
-       * Returns the position of the element on its parent on its initial state, 
-       * with translateX and translateY = 0. We consider this position as the
-       * idle position of the element on its parent.
-       */
-
     }, {
       key: "_getIdlePosition",
-      value: function _getIdlePosition() {
-        var el = this.el; // bounding rect: {top, right, bottom, left}
-
-        var elBoundingRect = el.getBoundingClientRect();
-        var parentBoundingRect = el.parentNode.getBoundingClientRect(); // the absolute position of our element on its parent
-
+      value: function value() {
+        var t = this.el,
+            e = t.getBoundingClientRect(),
+            n = t.parentNode.getBoundingClientRect();
         return {
-          x: elBoundingRect.left - parentBoundingRect.left,
-          y: elBoundingRect.top - parentBoundingRect.top
+          x: e.left - n.left,
+          y: e.top - n.top
         };
       }
-      /**
-       * 
-       * @param {HTMLElement} el 
-       * @returns {object} x, y, zoom, initialTransofrm{x,y}
-       */
-
     }, {
       key: "calcXYZoom",
-      value: function calcXYZoom() {
-        var matrix = this.matrix;
-        var position = this.idlePosition;
-        var viewportCenter = this.viewportCenter;
-        var currentOneToOneCenter = {
-          x: viewportCenter.x - position.x,
-          y: viewportCenter.y - position.y
-        }; // the current X,Y of our element
-
-        var currentCenter = {
-          x: currentOneToOneCenter.x / matrix.scaleX,
-          y: currentOneToOneCenter.y / matrix.scaleY
-        };
-        return _objectSpread2(_objectSpread2({}, currentCenter), {}, {
-          zoom: matrix.scaleX
+      value: function value() {
+        var t = this.matrix,
+            e = this.idlePosition,
+            n = this.viewportCenter,
+            o = n.x - e.x,
+            r = n.y - e.y;
+        return u(u({}, {
+          x: o / t.scaleX,
+          y: r / t.scaleY
+        }), {}, {
+          zoom: t.scaleX
         });
       }
-      /**
-       * @param {object} params - {start{x,y,zoom}, target{x,y.zoom}}
-       */
-
     }, {
       key: "createProgressFunction",
-      value: function createProgressFunction(params) {
-        var start = this._xyzoomToTranslate(params.start);
+      value: function value(t) {
+        var e = this._xyzoomToTranslate(t.start),
+            n = this._xyzoomToTranslate(t.target),
+            o = Math.atan(Math.abs(n.y - e.y) / Math.abs(n.x - e.x)),
+            r = Math.sqrt(Math.pow(n.y - e.y, 2) + Math.pow(n.x - e.x, 2)),
+            a = 1,
+            i = 1;
 
-        var target = this._xyzoomToTranslate(params.target); // first we need to calculate the angle and the distance that we are going to use for our calculations
-
-
-        var theta = Math.atan(Math.abs(target.y - start.y) / Math.abs(target.x - start.x));
-        var lineLength = Math.sqrt(Math.pow(target.y - start.y, 2) + Math.pow(target.x - start.x, 2)); // secondly we need to identify the multipliers that we are going to use to calculate for our x and y
-        // depending on the relative position of our target compared to our start
-
-        var _x = 1,
-            _y = 1;
-        if (target.x < start.x) _x = -1;
-        if (target.y < start.y) _y = -1;
-        return function progress(fraction) {
-          var distanceOnLine = fraction * lineLength;
+        return n.x < e.x && (a = -1), n.y < e.y && (i = -1), function (t) {
+          var s = t * r;
           return {
-            translateX: _x * distanceOnLine * Math.cos(theta) + start.x,
-            translateY: _y * distanceOnLine * Math.sin(theta) + start.y,
-            scale: (target.scale - start.scale) * fraction + start.scale
+            translateX: a * s * Math.cos(o) + e.x,
+            translateY: i * s * Math.sin(o) + e.y,
+            scale: (n.scale - e.scale) * t + e.scale
           };
         };
       }
     }, {
       key: "_xyzoomToTranslate",
-      value: function _xyzoomToTranslate(vals) {
-        // the target point from the top-left corner of the element, having applied the target zoom
-        var targetCenter = {
-          x: vals.zoom * vals.x,
-          y: vals.zoom * vals.y
-        };
-        var move = {
-          x: this.viewportCenter.x - targetCenter.x,
-          y: this.viewportCenter.y - targetCenter.y
-        };
+      value: function value(t) {
+        var e = t.zoom * t.x,
+            n = t.zoom * t.y,
+            o = this.viewportCenter.x - e,
+            r = this.viewportCenter.y - n;
         return {
-          x: move.x - this.idlePosition.x,
-          y: move.y - this.idlePosition.y,
-          scale: vals.zoom
+          x: o - this.idlePosition.x,
+          y: r - this.idlePosition.y,
+          scale: t.zoom
         };
       }
-      /**
-       * 
-       * @param {object} data - {
-              path,
-              startPoint,
-              finalPoint,
-              pathLength,
-              zoom,
-              startFrom,
-              endTo,
-              transitionDuration,
-              alongPathDuration
-          }
-       */
-
     }, {
       key: "createPathProgressFunction",
-      value: function createPathProgressFunction(data, initialValue) {
-        var _this = this;
+      value: function value(t, e) {
+        var n = this,
+            o = function o(t) {};
 
-        var transitionProgress = function transitionProgress(progress) {};
+        t.transitionDuration > 0 && (o = this.createProgressFunction({
+          start: e,
+          target: {
+            x: t.startPoint.x,
+            y: t.startPoint.y,
+            zoom: e.zoom
+          }
+        }));
+        var r = t.transitionDuration / (t.transitionDuration + t.alongPathDuration),
+            a = t.alongPathDuration / (t.transitionDuration + t.alongPathDuration),
+            i = (t.endTo - t.startFrom) * t.pathLength;
+        return function (s) {
+          if (t.transitionDuration > 0 && s < r) return o(s / r);
 
-        if (data.transitionDuration > 0) {
-          transitionProgress = this.createProgressFunction({
-            start: initialValue,
-            target: {
-              x: data.startPoint.x,
-              y: data.startPoint.y,
-              zoom: initialValue.zoom
-            }
-          });
-        }
-
-        var transitionFraction = data.transitionDuration / (data.transitionDuration + data.alongPathDuration);
-        var alongPathFraction = data.alongPathDuration / (data.transitionDuration + data.alongPathDuration); // the actual length of the path to move on having taken out the startFrom and endTo parts
-
-        var fractionPathLength = (data.endTo - data.startFrom) * data.pathLength;
-        return function (progress) {
-          if (data.transitionDuration > 0 && progress < transitionFraction) {
-            return transitionProgress(progress / transitionFraction);
-          } // the fraction from 0 to 1 of the second part calculated strictly out of the durations
-
-
-          var secondPartProgress = (progress - transitionFraction) / alongPathFraction; // calculate the scale of the point
-
-          var scale = (data.zoom - initialValue.zoom) * secondPartProgress + initialValue.zoom; // the distance that we expect to have covered on the full path 
-
-          var distanceFromZero = secondPartProgress * fractionPathLength + data.startFrom * data.pathLength;
-          var point = data.path.getPointAtLength(distanceFromZero); // x, y -> that's where we want to be
-
-          var res = _this._xyzoomToTranslate({
-            x: point.x,
-            y: point.y,
-            zoom: scale
+          var u = (s - r) / a,
+              l = (t.zoom - e.zoom) * u + e.zoom,
+              c = u * i + t.startFrom * t.pathLength,
+              p = t.path.getPointAtLength(c),
+              h = n._xyzoomToTranslate({
+            x: p.x,
+            y: p.y,
+            zoom: l
           });
 
           return {
-            translateX: res.x,
-            translateY: res.y,
-            scale: res.scale
+            translateX: h.x,
+            translateY: h.y,
+            scale: h.scale
           };
         };
       }
-    }]);
+    }]), t;
+  }(),
+      m = function (t) {
+    l(n, t);
+    var e = f(n);
 
-    return Adaptor;
-  }();
-  /**
-   * Thus, here you'll find:
-   * the following properties:
-   * - this.element: provides a reference to the specific element of the MonoIncident
-   * - this.attributeKey: the key of the animatedAttr of the MonoIncident
-   * - this.targetValue: the final value of the animatedAttr
-   * and the following methods:
-   * - onGetContext
-   * - getScratchValue
-   * - onProgress
-   * which are analysed more inline
-   *
-   **/
-
-
-  var MyEffect = /*#__PURE__*/function (_MotorCortex$Effect) {
-    _inherits(MyEffect, _MotorCortex$Effect);
-
-    var _super = _createSuper(MyEffect);
-
-    function MyEffect() {
-      _classCallCheck(this, MyEffect);
-
-      return _super.apply(this, arguments);
+    function n() {
+      return o(this, n), e.apply(this, arguments);
     }
 
-    _createClass(MyEffect, [{
+    return a(n, [{
       key: "getScratchValue",
-
-      /**
-      * the scratch value of the Incident should return back the triplette 
-      * x, y, zoom
-      * We consider as the viewport the parent node of our element and we calculate
-      * its initial position taking in consideration the relative position of our 
-      * element into its parent node. The initial zoom is calculated out of the 
-      * scaleX value of our element
-      **/
-      value: function getScratchValue() {
-        this.adaptor = new Adaptor(this.element);
-        return this.adaptor.calcXYZoom();
+      value: function value() {
+        return this.adaptor = new y(this.element), this.adaptor.calcXYZoom();
       }
-      /**
-       * 
-      **/
-
     }, {
       key: "onGetContext",
-      value: function onGetContext() {
-        this.adaptor = new Adaptor(this.element);
-        this.progressMethod = this.adaptor.createProgressFunction({
+      value: function value() {
+        this.adaptor = new y(this.element), this.progressMethod = this.adaptor.createProgressFunction({
           start: this.initialValue,
           target: this.targetValue
         });
       }
-      /**
-      * 
-      **/
-
     }, {
       key: "onProgress",
-      value: function onProgress(fraction, millisecond) {
-        var vals = this.progressMethod(fraction);
-        this.element.style.transform = "translateX(".concat(vals.translateX, "px) translateY(").concat(vals.translateY, "px) scaleX(").concat(vals.scale, ") scaleY(").concat(vals.scale, ")");
+      value: function value(t, e) {
+        var n = this.progressMethod(t);
+        this.element.style.transform = "translateX(".concat(n.translateX, "px) translateY(").concat(n.translateY, "px) scaleX(").concat(n.scale, ") scaleY(").concat(n.scale, ")");
       }
-    }]);
+    }]), n;
+  }(n.default.Effect);
 
-    return MyEffect;
-  }(MotorCortex__default['default'].Effect);
-
-  var xmlns = "http://www.w3.org/2000/svg";
-  /**
-   * The attrs that this Incident expect are almost identical with its "brother's"
-   * ZoomTo:
-   * {
-   *  animatedAttrs:{
-   *      position: {
-   *          path,
-   *          zoom
-   *      }
-   *  },
-   *  transition: 0,
-   *  from: 0,
-   *  to: 1
-   * }
-   * 
-   * path must be a valid svg path that will be put on the "d" attribute of the path element
-   * that will be created out of it and which will be used as our guide for the 
-   * move. 
-   * A difference between this Incident and the simple ZoomTo Incident is that 
-   * ZoomTo optionally takes initial values, meaning that it will just move from
-   * where the camera is to the target value. FocusAlongPath will start from the 
-   * first point of the provided path, no matter where the camera was. This might
-   * introduce an anwanted jump effect. 
-   * The "transition" attribute, provided outside the animatedAttrs allows us to optionally 
-   * define a transition duration from the current point to the start of the path. This is
-   * by default 0. Keep in mind that the duration of the transition will be substracted from
-   * the move along path. For example if the user provides props.duration = 2000 and 
-   * attrs.transition = 100, then the move along the path will only last 1900 milliseconds
-   * and the total duration of the Incident will still be 2000. Zoom remains tha same during
-   * the transition and only starts animating when the movement enters the path.
-   * The "from" and "to" attributes (also outside the animatedAttrs) allows the developer
-   * to define if they want the movement to start from a specific portion (0 to 1) of the
-   * path or to end on a specific portion of it (again 0 to 1). These two attributes are
-   * optional too with default values from:0 and to:1.
-   */
-
-  var FollowPath = /*#__PURE__*/function (_ZoomTo) {
-    _inherits(FollowPath, _ZoomTo);
-
-    var _super = _createSuper(FollowPath);
-
-    function FollowPath() {
-      _classCallCheck(this, FollowPath);
-
-      return _super.apply(this, arguments);
-    }
-
-    _createClass(FollowPath, [{
-      key: "onInitialise",
-      value: function onInitialise() {
-        var duration = this.props.duration;
-        var path = document.createElementNS(xmlns, "path");
-        path.setAttributeNS(null, 'd', this.targetValue.path); // create a data repository that will hold usefull info of our Incident
-
-        this.data = {
-          path: path,
-          finalPoint: null,
-          startPoint: null,
-          zoom: this.targetValue.zoom,
-          pathLength: path.getTotalLength(),
-          startFrom: !this.attrs.from ? 0 : this.attrs.from,
-          endTo: !this.attrs.to ? 1 : this.attrs.to,
-          transitionDuration: !this.attrs.transition ? 0 : this.attrs.transition,
-
-          get alongPathDuration() {
-            return duration - this.transitionDuration;
-          }
-
-        };
-        this.data.finalPoint = path.getPointAtLength(this.data.endTo * this.data.pathLength);
-        this.data.startPoint = path.getPointAtLength(this.data.startFrom * this.data.pathLength); // then set the final values of the Incident in terms of x, y, zoom so the 
-        // following Incidents can use it
-
-        this.targetValue.x = this.data.finalPoint.x;
-        this.targetValue.y = this.data.finalPoint.y;
-      }
-    }, {
-      key: "onGetContext",
-      value: function onGetContext() {
-        this.adaptor = new Adaptor(this.element);
-        this.data.zoom = this.targetValue.zoom;
-        this.progressMethod = this.adaptor.createPathProgressFunction(this.data, this.initialValue);
-      }
-    }]);
-
-    return FollowPath;
-  }(MyEffect);
-
-  var main = {
+  return {
     npm_name: "@kissmybutton/motorcortex-2dcam",
     incidents: [{
-      exportable: MyEffect,
+      exportable: m,
       name: "ZoomTo",
       attributesValidationRules: {
         animatedAttrs: {
-          type: 'object',
+          type: "object",
           props: {
             position: {
-              type: 'object',
+              type: "object",
               props: {
                 x: {
-                  type: 'number',
-                  optional: true,
+                  type: "number",
+                  optional: !0,
                   min: 0
                 },
                 y: {
-                  type: 'number',
-                  optional: true,
+                  type: "number",
+                  optional: !0,
                   min: 0
                 },
                 zoom: {
-                  type: 'number',
-                  optional: true,
+                  type: "number",
+                  optional: !0,
                   min: 0
                 }
               }
@@ -708,22 +455,57 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         }
       }
     }, {
-      exportable: FollowPath,
-      name: 'FollowPath',
+      exportable: function (t) {
+        l(n, t);
+        var e = f(n);
+
+        function n() {
+          return o(this, n), e.apply(this, arguments);
+        }
+
+        return a(n, [{
+          key: "onInitialise",
+          value: function value() {
+            var t = this.props.duration,
+                e = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            e.setAttributeNS(null, "d", this.targetValue.path), this.data = {
+              path: e,
+              finalPoint: null,
+              startPoint: null,
+              zoom: this.targetValue.zoom,
+              pathLength: e.getTotalLength(),
+              startFrom: this.attrs.from ? this.attrs.from : 0,
+              endTo: this.attrs.to ? this.attrs.to : 1,
+              transitionDuration: this.attrs.transition ? this.attrs.transition : 0,
+
+              get alongPathDuration() {
+                return t - this.transitionDuration;
+              }
+
+            }, this.data.finalPoint = e.getPointAtLength(this.data.endTo * this.data.pathLength), this.data.startPoint = e.getPointAtLength(this.data.startFrom * this.data.pathLength), this.targetValue.x = this.data.finalPoint.x, this.targetValue.y = this.data.finalPoint.y;
+          }
+        }, {
+          key: "onGetContext",
+          value: function value() {
+            this.adaptor = new y(this.element), this.data.zoom = this.targetValue.zoom, this.progressMethod = this.adaptor.createPathProgressFunction(this.data, this.initialValue);
+          }
+        }]), n;
+      }(m),
+      name: "FollowPath",
       attributesValidationRules: {
         animatedAttrs: {
-          type: 'object',
+          type: "object",
           props: {
             position: {
-              type: 'object',
+              type: "object",
               props: {
                 path: {
-                  type: 'string',
-                  optional: false
+                  type: "string",
+                  optional: !1
                 },
                 zoom: {
-                  type: 'number',
-                  optional: true,
+                  type: "number",
+                  optional: !0,
                   min: 0
                 }
               }
@@ -731,30 +513,29 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
           }
         },
         transition: {
-          type: 'number',
-          integer: true,
+          type: "number",
+          integer: !0,
           min: 0,
-          optional: true
+          optional: !0
         },
         from: {
-          type: 'number',
+          type: "number",
           min: 0,
           max: 1,
-          optional: true
+          optional: !0
         },
         to: {
-          type: 'number',
+          type: "number",
           min: 0,
           max: 1,
-          optional: true
+          optional: !0
         }
       }
     }],
     compositeAttributes: {
-      position: ['x', 'y', 'zoom', 'path']
+      position: ["x", "y", "zoom", "path"]
     }
   };
-  return main;
 });
 
 /***/ }),
@@ -851,7 +632,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "aa3a5c5dd605362ea569"
+/******/ 		__webpack_require__.h = () => "f8871890c4f48ae0f519"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
