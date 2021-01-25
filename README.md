@@ -54,6 +54,9 @@ const zoomto = new TDCAM.ZoomTo({
 });
 ```
 
+### IMPORTANT
+The element that you want to zoom to (any element that you target via your selector) must have `transform-origin: top left`
+
 The expected attributes of ZoomTo include the animatedAttrs and the animated attribute
 `position`. position is a composite attribute consisting of x, y and zoom, where x and y
 are the coordinates of our selected element we want to focus and zoom the zoom level we want to apply.
