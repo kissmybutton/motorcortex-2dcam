@@ -1,8 +1,9 @@
 import ZoomTo from "./Incidents/ZoomTo";
 import FollowPath from "./Incidents/FollowPath";
-
+const pkg = require('../package.json');
 export default {
-  npm_name: "@kissmybutton/motorcortex-2dcam",
+    npm_name: pkg.name,
+    version: pkg.version,
   incidents: [
     {
         exportable: ZoomTo,
