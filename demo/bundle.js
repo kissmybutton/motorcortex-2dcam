@@ -428,48 +428,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         this.element.style.transform = "translateX(".concat(n.translateX, "px) translateY(").concat(n.translateY, "px) scaleX(").concat(n.scale, ") scaleY(").concat(n.scale, ")");
       }
     }]), n;
-  }(n.default.Effect),
-      g = function (t) {
-    l(n, t);
-    var e = f(n);
-
-    function n() {
-      return o(this, n), e.apply(this, arguments);
-    }
-
-    return a(n, [{
-      key: "onInitialise",
-      value: function value() {
-        var t = this.props.duration,
-            e = document.createElementNS("http://www.w3.org/2000/svg", "path");
-        e.setAttributeNS(null, "d", this.targetValue.path), this.data = {
-          path: e,
-          finalPoint: null,
-          startPoint: null,
-          zoom: this.targetValue.zoom,
-          pathLength: e.getTotalLength(),
-          startFrom: this.attrs.from ? this.attrs.from : 0,
-          endTo: this.attrs.to ? this.attrs.to : 1,
-          transitionDuration: this.attrs.transition ? this.attrs.transition : 0,
-
-          get alongPathDuration() {
-            return t - this.transitionDuration;
-          }
-
-        }, this.data.finalPoint = e.getPointAtLength(this.data.endTo * this.data.pathLength), this.data.startPoint = e.getPointAtLength(this.data.startFrom * this.data.pathLength), this.targetValue.x = this.data.finalPoint.x, this.targetValue.y = this.data.finalPoint.y;
-      }
-    }, {
-      key: "onGetContext",
-      value: function value() {
-        this.adaptor = new y(this.element), this.data.zoom = this.targetValue.zoom, this.progressMethod = this.adaptor.createPathProgressFunction(this.data, this.initialValue);
-      }
-    }]), n;
-  }(m),
-      d = __webpack_require__(500);
+  }(n.default.Effect);
 
   return {
-    npm_name: d.name,
-    version: d.version,
+    npm_name: "@kissmybutton/motorcortex-2dcam",
+    version: "0.0.8",
     incidents: [{
       exportable: m,
       name: "ZoomTo",
@@ -501,7 +464,42 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         }
       }
     }, {
-      exportable: g,
+      exportable: function (t) {
+        l(n, t);
+        var e = f(n);
+
+        function n() {
+          return o(this, n), e.apply(this, arguments);
+        }
+
+        return a(n, [{
+          key: "onInitialise",
+          value: function value() {
+            var t = this.props.duration,
+                e = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            e.setAttributeNS(null, "d", this.targetValue.path), this.data = {
+              path: e,
+              finalPoint: null,
+              startPoint: null,
+              zoom: this.targetValue.zoom,
+              pathLength: e.getTotalLength(),
+              startFrom: this.attrs.from ? this.attrs.from : 0,
+              endTo: this.attrs.to ? this.attrs.to : 1,
+              transitionDuration: this.attrs.transition ? this.attrs.transition : 0,
+
+              get alongPathDuration() {
+                return t - this.transitionDuration;
+              }
+
+            }, this.data.finalPoint = e.getPointAtLength(this.data.endTo * this.data.pathLength), this.data.startPoint = e.getPointAtLength(this.data.startFrom * this.data.pathLength), this.targetValue.x = this.data.finalPoint.x, this.targetValue.y = this.data.finalPoint.y;
+          }
+        }, {
+          key: "onGetContext",
+          value: function value() {
+            this.adaptor = new y(this.element), this.data.zoom = this.targetValue.zoom, this.progressMethod = this.adaptor.createPathProgressFunction(this.data, this.initialValue);
+          }
+        }]), n;
+      }(m),
       name: "FollowPath",
       attributesValidationRules: {
         animatedAttrs: {
@@ -548,14 +546,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     }
   };
 });
-
-/***/ }),
-
-/***/ 500:
-/***/ ((module) => {
-
-"use strict";
-module.exports = JSON.parse("{\"name\":\"@kissmybutton/motorcortex-2dcam\",\"version\":\"0.0.7\",\"description\":\"zoom and pan to any element like you handle a 2d camera\",\"main\":\"dist/bundle.cjs.js\",\"module\":\"dist/bundle.esm.js\",\"browser\":\"dist/bundle.umd.js\",\"author\":\"KissMyButton PC (kissmybutton.gr) <opensource@kissmybutton.gr>\",\"repository\":{\"type\":\"git\",\"url\":\"https://github.com/kissmybutton/motorcortex-2dcam\"},\"license\":\"MIT\",\"engines\":{\"node\":\">=10\"},\"scripts\":{\"concurrently\":\"concurrently -c \\\"cyan.bold,magenta.bold\\\" --names \\\"JS,Styles\\\"\",\"lint:styles\":\"stylelint  --allow-empty-input \\\"src/**.css\\\" \\\"src/**/*.scss\\\" --config .stylelintrc.json\",\"lint:js\":\"eslint -c .eslintrc src/**/*.js\",\"lint\":\"npm run concurrently \\\"npm:lint:js\\\" \\\"npm:lint:styles\\\"\",\"lint:fix\":\"npm run concurrently  \\\"npm:lint:js -- --fix\\\" \\\"npm:lint:styles -- --fix\\\"\",\"build\":\"npm run build:lib && npm run build:demo\",\"build:lib\":\"rollup -c\",\"start\":\"npm run build:lib && concurrently -c \\\"cyan.bold,magenta.bold\\\" \\\"npm:build:lib -- -w\\\"  \\\"npm:start:demo\\\" \",\"start:demo\":\"webpack serve --mode=development --config ./demo/webpack.config.js\",\"build:demo\":\"webpack --mode=production --config ./demo/webpack.config.js\",\"test\":\"HERE GOES YOUR TEST TASK\",\"test:prod\":\"npm run lint\"},\"keywords\":[\"motorcortex\"],\"config\":{\"commitizen\":{\"path\":\"cz-conventional-changelog\"}},\"dependencies\":{\"@kissmybutton/motorcortex-anime\":\"2.1.7\"},\"peerDependencies\":{\"@kissmybutton/motorcortex\":\"6.2.2\"},\"devDependencies\":{\"@babel/cli\":\"7.12.10\",\"@babel/core\":\"7.12.10\",\"@babel/plugin-syntax-jsx\":\"7.12.1\",\"@babel/plugin-transform-react-jsx\":\"7.12.12\",\"@babel/preset-env\":\"7.12.11\",\"@kissmybutton/motorcortex\":\"6.2.2\",\"@kissmybutton/motorcortex-player\":\"1.7.0\",\"babel-eslint\":\"10.1.0\",\"babel-loader\":\"8.2.2\",\"concurrently\":\"5.3.0\",\"css-loader\":\"5.0.1\",\"es6-promise\":\"4.2.8\",\"eslint\":\"7.17.0\",\"eslint-config-prettier\":\"7.1.0\",\"eslint-config-standard\":\"16.0.2\",\"eslint-plugin-babel\":\"5.3.1\",\"eslint-plugin-import\":\"2.22.1\",\"eslint-plugin-node\":\"11.1.0\",\"eslint-plugin-prettier\":\"3.3.1\",\"eslint-plugin-promise\":\"4.2.1\",\"eslint-plugin-standard\":\"4.1.0\",\"exports-loader\":\"1.1.1\",\"imports-loader\":\"1.2.0\",\"npx\":\"10.2.2\",\"prettier\":\"2.2.1\",\"rimraf\":\"3.0.2\",\"rollup\":\"2.36.1\",\"@rollup/plugin-babel\":\"5.2.2\",\"@rollup/plugin-node-resolve\":\"11.0.1\",\"@rollup/plugin-commonjs\":\"17.0.0\",\"shelljs\":\"0.8.4\",\"stylelint\":\"13.8.0\",\"stylelint-config-prettier\":\"8.0.2\",\"stylelint-config-recommended\":\"3.0.0\",\"stylelint-config-recommended-scss\":\"4.2.0\",\"stylelint-config-sass-guidelines\":\"7.1.0\",\"stylelint-config-standard\":\"20.0.0\",\"stylelint-scss\":\"3.18.0\",\"webpack\":\"5.11.1\",\"webpack-cli\":\"4.3.1\",\"webpack-dev-server\":\"3.11.1\",\"whatwg-fetch\":\"3.5.0\"}}");
 
 /***/ }),
 
@@ -651,7 +641,7 @@ module.exports = JSON.parse("{\"name\":\"@kissmybutton/motorcortex-2dcam\",\"ver
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "87ea5ebc875d91fb1ceb"
+/******/ 		__webpack_require__.h = () => "6a3bb014ae0149887fef"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
