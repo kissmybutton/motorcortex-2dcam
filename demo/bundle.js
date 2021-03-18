@@ -125,6 +125,7 @@ clip.addIncident(pop1, 6000);
 var player = new (_kissmybutton_motorcortex_player__WEBPACK_IMPORTED_MODULE_2___default())({
   clip: rootClip
 });
+console.log(JSON.stringify(rootClip.exportDefinition()));
 
 /***/ }),
 
@@ -641,7 +642,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => "84e91c7e43235573f2f7"
+/******/ 		__webpack_require__.h = () => "08533264bbfc664383cd"
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

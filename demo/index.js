@@ -99,3 +99,4 @@ clip.addIncident(zoomTo2, 2000);
 clip.addIncident(pop1, 6000);
 const player = new Player({clip: rootClip});
 
+console.log(JSON.stringify(rootClip.exportDefinition()))
