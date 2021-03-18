@@ -28,7 +28,7 @@ export default [
         globals: {
           "@kissmybutton/motorcortex": "MotorCortex",
         },
-        name: "bundle",
+        name: pkg.name,
         file: pkg.browser,
         format: "umd",
       },
