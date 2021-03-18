@@ -1,6 +1,6 @@
 {
   "name": "@kissmybutton/motorcortex-2dcam",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "zoom and pan to any element like you handle a 2d camera",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
