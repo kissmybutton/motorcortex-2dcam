@@ -3,25 +3,19 @@ import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
 import pkg from "./package.json";
-import json from '@rollup/plugin-json';
+import json from "@rollup/plugin-json";
 export default [
   {
-    input: "src/main.js",
+    input: "src/index.js",
     external: ["@kissmybutton/motorcortex"],
     output: [
-      { file: pkg.main, format: "cjs", name: "bundle" },
-      { file: pkg.module, format: "es", name: "bundle" },
+      { file: pkg.main, format: "cjs" },
+      { file: pkg.module, format: "es" },
     ],
-    plugins: [
-        resolve(), 
-        babel(), 
-        commonjs(), 
-        terser(),
-        json()
-    ],
+    plugins: [resolve(), babel(), commonjs(), terser(), json()],
   },
   {
-    input: "src/main.js",
+    input: "src/index.js",
     external: ["@kissmybutton/motorcortex"],
     output: [
       {
@@ -37,7 +31,8 @@ export default [
       resolve({ mainFields: ["module", "main", "browser"] }),
       babel(),
       commonjs(),
-      terser(),json()
-    ]
-  }
+      terser(),
+      json(),
+    ],
+  },
 ];
