@@ -128,30 +128,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
   var n = e(t);
 
   function o(t, e) {
-    if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
-  }
-
-  function r(t, e) {
-    for (var n = 0; n < e.length; n++) {
-      var o = e[n];
-      o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(t, o.key, o);
-    }
-  }
-
-  function a(t, e, n) {
-    return e && r(t.prototype, e), n && r(t, n), t;
-  }
-
-  function i(t, e, n) {
-    return e in t ? Object.defineProperty(t, e, {
-      value: n,
-      enumerable: !0,
-      configurable: !0,
-      writable: !0
-    }) : t[e] = n, t;
-  }
-
-  function s(t, e) {
     var n = Object.keys(t);
 
     if (Object.getOwnPropertySymbols) {
@@ -164,17 +140,41 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     return n;
   }
 
-  function u(t) {
+  function r(t) {
     for (var e = 1; e < arguments.length; e++) {
       var n = null != arguments[e] ? arguments[e] : {};
-      e % 2 ? s(Object(n), !0).forEach(function (e) {
-        i(t, e, n[e]);
-      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : s(Object(n)).forEach(function (e) {
+      e % 2 ? o(Object(n), !0).forEach(function (e) {
+        u(t, e, n[e]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(t, Object.getOwnPropertyDescriptors(n)) : o(Object(n)).forEach(function (e) {
         Object.defineProperty(t, e, Object.getOwnPropertyDescriptor(n, e));
       });
     }
 
     return t;
+  }
+
+  function a(t, e) {
+    if (!(t instanceof e)) throw new TypeError("Cannot call a class as a function");
+  }
+
+  function i(t, e) {
+    for (var n = 0; n < e.length; n++) {
+      var o = e[n];
+      o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(t, o.key, o);
+    }
+  }
+
+  function s(t, e, n) {
+    return e && i(t.prototype, e), n && i(t, n), t;
+  }
+
+  function u(t, e, n) {
+    return e in t ? Object.defineProperty(t, e, {
+      value: n,
+      enumerable: !0,
+      configurable: !0,
+      writable: !0
+    }) : t[e] = n, t;
   }
 
   function l(t, e) {
@@ -235,10 +235,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
   var y = function () {
     function t(e) {
-      o(this, t), this.el = e, this.matrix = this.getMatrix(e), this.viewportCenter = this.getViewPortCenter(), this.idlePosition = this.getIdlePosition();
+      a(this, t), this.el = e, this.matrix = this.getMatrix(e), this.viewportCenter = this.getViewPortCenter(), this.idlePosition = this.getIdlePosition();
     }
 
-    return a(t, [{
+    return s(t, [{
       key: "getMatrix",
       value: function value(t) {
         return function (t) {
@@ -299,10 +299,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             e = this.idlePosition,
             n = this.viewportCenter,
             o = n.x - e.x,
-            r = n.y - e.y;
-        return u(u({}, {
+            a = n.y - e.y;
+        return r(r({}, {
           x: o / t.scaleX,
-          y: r / t.scaleY
+          y: a / t.scaleY
         }), {}, {
           zoom: t.scaleX
         });
@@ -383,10 +383,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
     var e = f(n);
 
     function n() {
-      return o(this, n), e.apply(this, arguments);
+      return a(this, n), e.apply(this, arguments);
     }
 
-    return a(n, [{
+    return s(n, [{
       key: "getScratchValue",
       value: function value() {
         return this.adaptor = new y(this.element), this.adaptor.calcXYZoom();
@@ -447,10 +447,10 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         var e = f(n);
 
         function n() {
-          return o(this, n), e.apply(this, arguments);
+          return a(this, n), e.apply(this, arguments);
         }
 
-        return a(n, [{
+        return s(n, [{
           key: "onInitialise",
           value: function value() {
             var t = this.props.duration,
@@ -626,7 +626,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("2a45078d428584398f83")
+/******/ 		__webpack_require__.h = () => ("978d9160dcadcb5e6657")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
