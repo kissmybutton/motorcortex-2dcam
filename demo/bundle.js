@@ -402,7 +402,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
   return {
     npm_name: "@kissmybutton/motorcortex-2dcam",
-    version: "0.0.15",
+    version: "0.0.16",
     incidents: [{
       exportable: m,
       name: "ZoomTo",
@@ -604,7 +604,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("1957c2ec049240a1c49e")
+/******/ 		__webpack_require__.h = () => ("e791089dc29d50b18028")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
