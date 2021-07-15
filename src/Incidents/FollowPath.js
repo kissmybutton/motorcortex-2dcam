@@ -43,7 +43,7 @@ export default class FollowPath extends ZoomTo {
     const path = document.createElementNS(xmlns, "path");
     path.setAttributeNS(null, "d", this.targetValue.path);
 
-    // create a data repository that will hold usefull info of our Incident
+    // create a data repository that will hold useful info of our Incident
     this.data = {
       path,
       finalPoint: null,
