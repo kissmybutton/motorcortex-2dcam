@@ -57,9 +57,8 @@ const zoomto = new TDCAM.ZoomTo({
 ### IMPORTANT
 The element that you want to zoom to (any element that you target via your selector) must have `transform-origin: top left`
 
-The expected attributes of ZoomTo include the animatedAttrs and the animated attribute
-`position`. position is a composite attribute consisting of x, y and zoom, where x and y
-are the coordinates of our selected element we want to focus and zoom the zoom level we want to apply.
+The expected attributes of ZoomTo include the animatedAttrs. This should contain the animated attribute `position`. 
+Position is a composite attribute consisting of x, y and zoom, where x and y are the coordinates of our selected element we want to focus and zoom the zoom level we want to apply.
 All, x, y and zoom are optional and if not provided will not be affected during animation.
 
 ### FollowPath
@@ -92,7 +91,7 @@ time we passed instead of x and y the `path` which we want our camera to follow.
 
 If you want your camera to move only on a part of a path you can use the `from` and `to` attributes
 that define the fraction (0 to 1) that you want your start and end point to be. E.g. if you
-provide the values from:0.2 and to:0.9 then the camera will start from the 20% of the path's overall length and
+provide the values `from: 0.2` and `to: 0.9` then the camera will start from the 20% of the path's overall length and
 will animate all the way to the 90% of its length. Of course both start and end are optional and have
 default values 0 and 1 respectively. 
 
